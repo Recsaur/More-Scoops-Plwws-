@@ -11,8 +11,19 @@ config_version=5
 [application]
 
 config/name="More Scoops Plwss!!"
+run/main_scene="uid://7khui2i0rbma"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+mouse_cursor/custom_image="uid://dgrsxlrg7nxkp"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [rendering]
 
