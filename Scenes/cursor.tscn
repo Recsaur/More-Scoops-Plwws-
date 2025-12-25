@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b25dt8c7o44nc"]
 
-[ext_resource type="Texture2D" uid="uid://dgrsxlrg7nxkp" path="res://curs.png" id="1_5l68f"]
-[ext_resource type="Script" uid="uid://ddyduyfby71ow" path="res://cursor.gd" id="2_qf7gk"]
+[ext_resource type="Texture2D" uid="uid://dgrsxlrg7nxkp" path="res://images/curs.png" id="1_5l68f"]
+[ext_resource type="Script" uid="uid://ddyduyfby71ow" path="res://scripts/cursor.gd" id="2_qf7gk"]
 
 [node name="Cursor" type="Sprite2D"]
 position = Vector2(-1.9073486e-06, 1.9073486e-06)

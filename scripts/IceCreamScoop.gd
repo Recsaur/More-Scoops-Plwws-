@@ -1,7 +1,10 @@
-extends RigidBody2D
+class_name ICP_Vanilla extends RigidBody2D
 
 
 func _ready():
+	pass
+	
+func _process(delta: float) -> void:
 	pass
 
 func launch(force : Vector2) -> void:

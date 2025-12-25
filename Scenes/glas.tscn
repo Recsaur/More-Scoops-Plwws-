@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://86ey1mixwtiv"]
+
+[ext_resource type="Texture2D" uid="uid://dawbpo04snh84" path="res://images/glas.jpg" id="1_j6d30"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pr1lq"]
+size = Vector2(162, 162)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pr1lq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_j6d30")

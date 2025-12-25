@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5sptbsrinp51"]
+[gd_scene load_steps=6 format=3 uid="uid://c5sptbsrinp51"]
 
-[ext_resource type="PackedScene" path="res://cone.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://ckji2leywmfux" path="res://Scenes/VectorCreate.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://86ey1mixwtiv" path="res://Scenes/glas.tscn" id="3_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://ds7ghhgnba25w" path="res://Scenes/scoop.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://b783v0ec2k76u" path="res://Scenes/WafCone.tscn" id="4_kry3j"]
+[ext_resource type="PackedScene" uid="uid://djsmo4sk2to2w" path="res://Scenes/points_ui.tscn" id="5_kry3j"]
 
 [node name="Main" type="Node2D"]
 
@@ -9,7 +12,23 @@
 position = Vector2(641, 362)
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(114, 603)
+position = Vector2(114, 596)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_bo1nx")]
-position = Vector2(706, 561)
+[node name="StaticBody2D" parent="." instance=ExtResource("3_jjvhh")]
+position = Vector2(353, 550.00006)
+scale = Vector2(0.6762667, 2.0997775)
+
+[node name="Scoop" parent="." instance=ExtResource("4_jjvhh")]
+position = Vector2(115, 599)
+
+[node name="Node2D2" parent="." instance=ExtResource("4_kry3j")]
+position = Vector2(922, 551)
+
+[node name="Node2D" parent="." instance=ExtResource("4_kry3j")]
+position = Vector2(612, 547)
+
+[node name="PointsUI" parent="." instance=ExtResource("5_kry3j")]
+offset_left = 531.0
+offset_top = 14.0
+offset_right = 531.0
+offset_bottom = 14.0

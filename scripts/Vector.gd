@@ -1,7 +1,7 @@
 extends Area2D
 
 
-@export var maximum_length := 200
+@export var maximum_length := 250
 const ICECREAM = preload("res://Scenes/IceCreamScoop.tscn")
 var touch_down := false
 var position_start := Vector2.ZERO
@@ -12,10 +12,9 @@ var vector := Vector2.ZERO
 func _ready() -> void:
 	
 	connect("input_event", Callable(self, "_on_input_event"))
-
+	
 
 func _draw() -> void:
-	print("DRWAN")
 	draw_line(position_start - global_position, (position_end - global_position), Color.BLUE, 8)
 	
 	draw_line(position_start - global_position, position_start - global_position + vector, Color.RED, 16)

@@ -1,17 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://bf84atsv4l55t"]
 
-[ext_resource type="Script" uid="uid://le37t4lvacu" path="res://IceCreamScoop.gd" id="1_tp8td"]
+[ext_resource type="Script" uid="uid://le37t4lvacu" path="res://scripts/IceCreamScoop.gd" id="1_tp8td"]
 [ext_resource type="Texture2D" uid="uid://lnnlon0fyexr" path="res://images/icecream.jpg" id="2_6ctfh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3agh"]
-size = Vector2(217.5, 140)
+size = Vector2(33.92304, 28.768965)
 
 [node name="IceCream" type="RigidBody2D"]
 script = ExtResource("1_tp8td")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3259804, 0.3259804)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_6ctfh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.52651e-14, -9.536743e-07)
+rotation = -3.1415925
+scale = Vector2(2.9325235, 2.8155344)
 shape = SubResource("RectangleShape2D_d3agh")
