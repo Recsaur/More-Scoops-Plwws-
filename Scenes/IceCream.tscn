@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://7cg356ljl8xy"]
+
+[ext_resource type="Texture2D" uid="uid://lnnlon0fyexr" path="res://images/icecream.jpg" id="2_rasln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2afcs"]
+size = Vector2(217.5, 140)
+
+[node name="IceCream" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3259804, 0.3259804)
+texture = ExtResource("2_rasln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2afcs")

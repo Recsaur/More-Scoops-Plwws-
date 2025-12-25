@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cobwkddomn20d"]
+
+[ext_resource type="Texture2D" uid="uid://1heowg5exrbt" path="res://Scenes/cone.jpg" id="1_u0elp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvldi"]
+size = Vector2(24.448547, 8.344396)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_u0elp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.8146973e-06, -108.000015)
+scale = Vector2(6.626161, -8.456128)
+shape = SubResource("RectangleShape2D_gvldi")

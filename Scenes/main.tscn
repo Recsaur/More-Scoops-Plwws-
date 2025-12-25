@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5sptbsrinp51"]
+
+[ext_resource type="PackedScene" uid="uid://cobwkddomn20d" path="res://cone.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ckji2leywmfux" path="res://Scenes/VectorCreate.tscn" id="3_8gbba"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Vector" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(641, 362)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(114, 603)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_bo1nx")]
+position = Vector2(706, 561)
