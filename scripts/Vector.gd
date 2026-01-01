@@ -3,11 +3,14 @@ extends Area2D
 
 @export var maximum_length := 250
 const ICECREAM = preload("res://Scenes/IceCreamScoop.tscn")
+const CUSTOMER = preload("res://customer.tscn")
 var touch_down := false
 var position_start := Vector2.ZERO
 var position_end := Vector2.ZERO
 
 var vector := Vector2.ZERO
+
+
 
 func _ready() -> void:
 	
@@ -56,3 +59,11 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 	if event.is_action_pressed("ui_touch"):
 		touch_down = true
 		position_start = event.position
+		
+		
+	
+func _on_customer_spawn_timeout() -> void:
+	var new_customer = CUSTOMER.instantiate()
+	var parent = get_parent()
+	if parent:
+		parent.add_child(new_customer)

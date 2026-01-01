@@ -1,6 +1,8 @@
 class_name ICP_Vanilla extends RigidBody2D
 
 
+const ICECREAM = preload("res://splat.tscn")
+
 func _ready():
 	pass
 	
@@ -16,3 +18,17 @@ func launch(force : Vector2) -> void:
 	queue_free()
 	#apply_impulse(Vector2.ZERO, force)
 	
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area is BaseCone:
+		queue_free()
+
+
+func _on_body_entered(body: Node) -> void:
+	var IceCreamNew = ICECREAM.instantiate()
+	var parent = get_parent()
+	if parent:
+		parent.add_child(IceCreamNew)
+		IceCreamNew.global_position = global_position
+	queue_free()

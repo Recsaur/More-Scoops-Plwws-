@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b783v0ec2k76u"]
+[gd_scene load_steps=5 format=3 uid="uid://b783v0ec2k76u"]
 
 [ext_resource type="Texture2D" uid="uid://1heowg5exrbt" path="res://images/cone.jpg" id="1_2xkri"]
 [ext_resource type="Script" uid="uid://bsenofbpi7i7x" path="res://scripts/ConeScript.gd" id="2_j0p4p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0p4p"]
-size = Vector2(12.224275, 0.9035225)
+size = Vector2(5.885762, 3.8812265)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8exh8"]
+size = Vector2(800, 139.99998)
 
 [node name="WaffleCone" type="Node2D"]
 
@@ -16,17 +19,18 @@ texture = ExtResource("1_2xkri")
 scale = Vector2(0.19999999, 0.19999999)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(15.000015, -380)
+position = Vector2(15.000002, -190.00002)
 scale = Vector2(33.1308, -42.280636)
 shape = SubResource("RectangleShape2D_j0p4p")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(0.2, 0.2)
+collision_mask = 3
 script = ExtResource("2_j0p4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(5, -385.00006)
-scale = Vector2(33.130795, -42.28063)
-shape = SubResource("RectangleShape2D_j0p4p")
+position = Vector2(20.000025, -519.99994)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_8exh8")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

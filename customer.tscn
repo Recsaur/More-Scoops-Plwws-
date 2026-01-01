@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq83d2idaaoh"]
+
+[ext_resource type="Texture2D" uid="uid://b2j4sq7l75wre" path="res://images/rikka.jpg" id="1_7tiyv"]
+[ext_resource type="Script" uid="uid://olba7t7yl1qc" path="res://customer.gd" id="1_r8ta2"]
+[ext_resource type="PackedScene" uid="uid://b783v0ec2k76u" path="res://Scenes/WafCone.tscn" id="3_f7asb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ta2"]
+size = Vector2(110, 110)
+
+[node name="Customer" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 4
+script = ExtResource("1_r8ta2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r8ta2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1.9073486e-06)
+scale = Vector2(0.15403338, 0.15403338)
+texture = ExtResource("1_7tiyv")
+
+[node name="WaffleCone" parent="." instance=ExtResource("3_f7asb")]
+position = Vector2(-74.00001, -56)
+scale = Vector2(0.54967856, 0.54967856)
+
+[node name="Place" type="Label" parent="."]
+offset_left = -51.0
+offset_top = 55.0
+offset_right = -1.0
+offset_bottom = 78.0
+text = "Order:"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 56.0
+offset_right = 44.0
+offset_bottom = 79.0

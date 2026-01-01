@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxj0ro14ntj5v"]
+
+[ext_resource type="Script" uid="uid://nesdiaab5b6r" path="res://splat.gd" id="1_16b8e"]
+[ext_resource type="Texture2D" uid="uid://lnnlon0fyexr" path="res://images/icecream.jpg" id="1_wedco"]
+
+[node name="Splat" type="Node2D"]
+script = ExtResource("1_16b8e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25179633, 0.25179633)
+texture = ExtResource("1_wedco")
+flip_v = true

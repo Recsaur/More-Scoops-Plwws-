@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://ckji2leywmfux" path="res://Scenes/VectorCreate.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://86ey1mixwtiv" path="res://Scenes/glas.tscn" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://ds7ghhgnba25w" path="res://Scenes/scoop.tscn" id="4_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://b783v0ec2k76u" path="res://Scenes/WafCone.tscn" id="4_kry3j"]
 [ext_resource type="PackedScene" uid="uid://djsmo4sk2to2w" path="res://Scenes/points_ui.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cq83d2idaaoh" path="res://customer.tscn" id="6_21xkr"]
 
 [node name="Main" type="Node2D"]
 
@@ -21,14 +21,24 @@ scale = Vector2(0.6762667, 2.0997775)
 [node name="Scoop" parent="." instance=ExtResource("4_jjvhh")]
 position = Vector2(115, 599)
 
-[node name="Node2D2" parent="." instance=ExtResource("4_kry3j")]
-position = Vector2(922, 551)
-
-[node name="Node2D" parent="." instance=ExtResource("4_kry3j")]
-position = Vector2(612, 547)
-
 [node name="PointsUI" parent="." instance=ExtResource("5_kry3j")]
 offset_left = 531.0
 offset_top = 14.0
 offset_right = 531.0
 offset_bottom = 14.0
+
+[node name="Customer" parent="." instance=ExtResource("6_21xkr")]
+position = Vector2(1133, 516)
+
+[node name="Limit" type="Marker2D" parent="."]
+position = Vector2(443, 572)
+
+[node name="Start" type="Marker2D" parent="."]
+position = Vector2(1279, 572)
+
+[node name="CustomerSpawn" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="CustomerSpawn" to="Vector" method="_on_customer_spawn_timeout"]

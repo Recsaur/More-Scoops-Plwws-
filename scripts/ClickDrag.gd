@@ -10,7 +10,7 @@ var dir_y = "NA"
 var y_comp = 0.0
 var x_comp = 0.0
 var ScoopRo = 0
-const ICECREAM = preload("res://Scenes/IceCream.tscn")
+#const ICECREAM = preload("res://Scenes/IceCream.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
