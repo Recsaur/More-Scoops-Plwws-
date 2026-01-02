@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://24hva8beftfl"]
+
+[ext_resource type="Texture2D" uid="uid://lnnlon0fyexr" path="res://images/icecream.jpg" id="1_v5xxb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -24.000006)
+scale = Vector2(0.5954938, 0.5954938)
+texture = ExtResource("1_v5xxb")

@@ -1,15 +1,17 @@
 extends CharacterBody2D
 
-var rng = RandomNumberGenerator.new()
+
 @onready var Start = $"../Start"
 @onready var Limit = $"../Limit"
-const BOUNDARY = 15
-var movement_time_left = rng.randf_range(1, 3.5)
-var ScoopsNeeded = rng.randi_range(1,3)
+@export var Scoops = 0
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
+const BOUNDARY = 15
+var rng = RandomNumberGenerator.new()
+var movement_time_left = rng.randf_range(0.75, 3.5)
+var ScoopsNeeded = rng.randi_range(1,3)
 var direction = -1
-@export var Scoops = 0
+
 
 
 func _ready():

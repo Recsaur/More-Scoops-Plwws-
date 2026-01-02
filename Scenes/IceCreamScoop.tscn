@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://le37t4lvacu" path="res://scripts/IceCreamScoop.gd" id="1_tp8td"]
 [ext_resource type="Texture2D" uid="uid://lnnlon0fyexr" path="res://images/icecream.jpg" id="2_6ctfh"]
-[ext_resource type="Script" uid="uid://cbnvrn73aauyu" path="res://Scenes/AreaICP.gd" id="3_7hcwp"]
+[ext_resource type="Script" uid="uid://cbnvrn73aauyu" path="res://scripts/AreaICP.gd" id="3_7hcwp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tp8td"]
 radius = 13.3417425

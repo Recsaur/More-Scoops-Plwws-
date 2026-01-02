@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxj0ro14ntj5v"]
 
-[ext_resource type="Script" uid="uid://nesdiaab5b6r" path="res://splat.gd" id="1_16b8e"]
+[ext_resource type="Script" uid="uid://nesdiaab5b6r" path="res://scripts/splat.gd" id="1_16b8e"]
 [ext_resource type="Texture2D" uid="uid://lnnlon0fyexr" path="res://images/icecream.jpg" id="1_wedco"]
 
 [node name="Splat" type="Node2D"]

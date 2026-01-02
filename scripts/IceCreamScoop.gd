@@ -1,7 +1,7 @@
 class_name ICP_Vanilla extends RigidBody2D
 
-
-const ICECREAM = preload("res://splat.tscn")
+var Claimed = false
+const ICECREAM = preload("res://Scenes/splat.tscn")
 
 func _ready():
 	pass
@@ -10,6 +10,13 @@ func _process(delta: float) -> void:
 	pass
 
 func launch(force : Vector2) -> void:
+	GameController.NumScoopsLaunched += 1
+	print("Scoops Launched: ",GameController.NumScoopsLaunched)
+	print("Scoops To Customers: ",GameController.ScoopsToCustomers)
+	print("Customers Served: ", GameController.CustomersServed)
+	if GameController.NumScoopsLaunched > 0 and GameController.ScoopsToCustomers > 0:
+		print("Accuracy: ",(float(GameController.ScoopsToCustomers)/GameController.NumScoopsLaunched)*100,"%")
+	print()
 	sleeping = false
 	freeze = false
 	await get_tree().physics_frame
@@ -22,6 +29,8 @@ func launch(force : Vector2) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is BaseCone:
+		#print("ITS HERE",area)
+		set_deferred("monitoring", false)
 		queue_free()
 
 
@@ -32,3 +41,11 @@ func _on_body_entered(body: Node) -> void:
 		parent.add_child(IceCreamNew)
 		IceCreamNew.global_position = global_position
 	queue_free()
+
+func MyScoop():
+	if Claimed:
+		return false
+	Claimed = true
+	return true
+		
+	
