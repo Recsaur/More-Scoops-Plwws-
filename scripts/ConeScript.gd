@@ -29,13 +29,13 @@ func _on_body_entered(body: Node2D) -> void:
 			var parent = get_parent()
 			if parent:
 				parent.add_child(IceCreamNew)
-				IceCreamNew.global_position = global_position
+				IceCreamNew.global_position = Vector2(global_position.x,global_position.y+15)
 			
 			
 			#print("HIT", self)
 			if Scoops >= ScoopsNeeded:
 				GameController.CustomersServed += 1
-				#print("DONE")
+				print("DONE")
 				Scoops = 0
 				get_parent().get_parent().queue_free()
 				queue_free()

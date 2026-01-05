@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://24hva8beftfl"]
+[gd_scene load_steps=3 format=3 uid="uid://24hva8beftfl"]
 
-[ext_resource type="Texture2D" uid="uid://lnnlon0fyexr" path="res://images/icecream.jpg" id="1_v5xxb"]
+[ext_resource type="Script" uid="uid://dsk7ett7e7p31" path="res://on_cone_scoop.gd" id="1_2oac6"]
+[ext_resource type="Texture2D" uid="uid://dxm4bq61ck36b" path="res://images/IceCreamOn.png" id="2_2oac6"]
 
-[node name="Node2D" type="Node2D"]
+[node name="OnConeScoop" type="Node2D"]
+script = ExtResource("1_2oac6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -24.000006)
-scale = Vector2(0.5954938, 0.5954938)
-texture = ExtResource("1_v5xxb")
+position = Vector2(0, -47)
+scale = Vector2(0.34408346, 0.34408346)
+texture = ExtResource("2_2oac6")
+offset = Vector2(0, -61.115)

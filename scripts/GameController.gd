@@ -2,6 +2,8 @@ extends Node
 
 @export var Points: int = 0
 
+
+var ICS_Rotation = 1
 #EVERYTHING TO CALC STATISTICS HERE
 var NumScoopsLaunched = 0 #Number of scoops launched
 var CustomersServed = 0 #Number of Customers served
