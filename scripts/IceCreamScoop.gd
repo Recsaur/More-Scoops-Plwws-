@@ -1,7 +1,7 @@
 class_name ICP_Vanilla extends RigidBody2D
 
 var Claimed = false
-const ICECREAM = preload("res://Scenes/splat.tscn")
+const SPLAT = preload("res://Scenes/splat.tscn")
 
 func _ready():
 	pass
@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 
 func launch(force : Vector2) -> void:	
 	GameController.NumScoopsLaunched += 1
+	print(GameController.Consecutive)
 	print("Scoops Launched: ",GameController.NumScoopsLaunched)
 	print("Scoops To Customers: ",GameController.ScoopsToCustomers)
 	print("Customers Served: ", GameController.CustomersServed)
@@ -22,7 +23,7 @@ func launch(force : Vector2) -> void:
 	await get_tree().physics_frame
 	apply_central_impulse(force*6.75)
 	await get_tree().create_timer(5.0).timeout
-	var IceCreamNew = ICECREAM.instantiate()
+	var IceCreamNew = SPLAT.instantiate()
 	var parent = get_parent()
 	if parent:
 		parent.add_child(IceCreamNew)
@@ -34,19 +35,24 @@ func launch(force : Vector2) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area is BaseCone:
+	if area is BaseCone or area is TestCone:
 		#print("ITS HERE",area)
 		set_deferred("monitoring", false)
+		GameController.Consecutive += 1
 		queue_free()
 
 
 func _on_body_entered(body: Node) -> void:
-	var IceCreamNew = ICECREAM.instantiate()
+	var SplatNew = SPLAT.instantiate()
 	var parent = get_parent()
 	if parent:
-		parent.add_child(IceCreamNew)
-		IceCreamNew.global_position = global_position
+		parent.add_child(SplatNew)
+		SplatNew.global_position = global_position
 	GameController.ICS_Rotation = linear_velocity.angle()
+	GameController.Consecutive = 0
+	GameController.ConsecutiveOrder = 0
+	print("AWWW RESET LOL")
+	#print("Lost", GameController.Consecutive)
 	queue_free()
 
 func  _physics_process(delta: float) -> void:

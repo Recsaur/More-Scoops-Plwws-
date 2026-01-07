@@ -1,6 +1,8 @@
 class_name BaseCone extends Area2D
 
+@onready var Ding = $"../AudioStreamPlayer2D"
 @export var Value: int = 1
+
 var Scoops = 0
 const ICECREAM = preload("res://OnConeScoop.tscn")
 #Heyyyyyooo ts can be made so like, have a check for the flavors, and maybe
@@ -8,8 +10,14 @@ const ICECREAM = preload("res://OnConeScoop.tscn")
 #when passed
 var rng = RandomNumberGenerator.new()
 var ScoopsNeeded = rng.randi_range(1,5)
+
 func _ready() -> void:
+	add_to_group("audio_controllers")
 	$"../../Label".text = str(ScoopsNeeded)
+	var VectorNode = get_tree().current_scene.find_child("Vector",true)
+	if VectorNode:
+		print(VectorNode.name)
+	
 		
 func _on_body_entered(body: Node2D) -> void:
 	if body is ICP_Vanilla and body.has_method("MyScoop"):
@@ -34,9 +42,16 @@ func _on_body_entered(body: Node2D) -> void:
 			
 			#print("HIT", self)
 			if Scoops >= ScoopsNeeded:
+				PitchCalc()
+				#if GameController.ConsecutiveOrder > 1: 
+					#Ding.pitch_scale = rng.randf_range((GameController.ConsecutiveOrder*0.15)+0.9,(GameController.ConsecutiveOrder*0.15)+1.1)
+				#Ding.play()
 				GameController.CustomersServed += 1
+				GameController.ConsecutiveOrder += 1
 				print("DONE")
+				GameController.Completion = true
 				Scoops = 0
+				#await get_tree().create_timer(3.0).timeout
 				get_parent().get_parent().queue_free()
 				queue_free()
 		else:
@@ -45,3 +60,10 @@ func _on_body_entered(body: Node2D) -> void:
 			
 		
 	
+func PitchCalc():
+	var Pitch: float = 0
+	var val1 = (GameController.ConsecutiveOrder*0.15)
+	#if GameController.ConsecutiveOrder > 1: 
+		
+	Pitch = rng.randf_range(val1+0.95, val1+1.05)
+	get_tree().call_group("audio_controllers", "AudioPlayDone", Pitch)

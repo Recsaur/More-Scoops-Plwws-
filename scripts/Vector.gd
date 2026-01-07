@@ -4,6 +4,7 @@ extends Area2D
 @export var maximum_length := 250
 const ICECREAM = preload("res://Scenes/IceCreamScoop.tscn")
 const CUSTOMER = preload("res://Scenes/customer.tscn")
+@onready var DoneSFX = $AudioStreamPlayer2D
 var touch_down := false
 var position_start := Vector2.ZERO
 var position_end := Vector2.ZERO
@@ -12,8 +13,8 @@ var vector := Vector2.ZERO
 
 
 func _ready() -> void:
+	add_to_group("audio_controllers")
 	connect("input_event", Callable(self, "_on_input_event"))
-	
 
 func _draw() -> void:
 	draw_line(position_start - global_position, (position_end - global_position), Color.BLANCHED_ALMOND, 10)
@@ -66,6 +67,11 @@ func _on_customer_spawn_timeout() -> void:
 	var parent = get_parent()
 	if parent:
 		parent.add_child(new_customer)
-	print("WAITING timeee:", WaitTimeRand)
+	#print("WAITING timeee:", WaitTimeRand)
 	$"../CustomerSpawn".wait_time = WaitTimeRand
 	$"../CustomerSpawn".start()
+	
+func AudioPlayDone(pitch: float):
+	print("GAAsAGAGAG", pitch)
+	DoneSFX.pitch_scale = pitch
+	DoneSFX.play()

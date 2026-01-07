@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqgxq5rbj08c7"]
+
+[ext_resource type="Script" uid="uid://dfhmfe3nyecxb" path="res://stationary_customer.gd" id="1_jqocp"]
+[ext_resource type="Texture2D" uid="uid://cvdcmcbw5xyf" path="res://images/Screenshot 2026-01-03 000557.png" id="2_lwkhm"]
+[ext_resource type="Texture2D" uid="uid://meh8mpfiyit4" path="res://images/kiwi1.jpg" id="3_cifrh"]
+[ext_resource type="PackedScene" uid="uid://cdlj1uexaes51" path="res://Scenes/WafCone_Stationary.tscn" id="5_lwkhm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egxtd"]
+size = Vector2(110, 110)
+
+[node name="StationaryCustomer" type="CharacterBody2D"]
+script = ExtResource("1_jqocp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1, 69)
+scale = Vector2(0.8022683, 0.9195462)
+texture = ExtResource("2_lwkhm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_egxtd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.000001, 1.999999)
+scale = Vector2(0.20392157, 0.37630662)
+texture = ExtResource("3_cifrh")
+
+[node name="Place" type="Label" parent="."]
+offset_left = -51.0
+offset_top = 55.0
+offset_right = -1.0
+offset_bottom = 78.0
+text = "Order:"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 56.0
+offset_right = 44.0
+offset_bottom = 79.0
+
+[node name="WaffleCone2" parent="." instance=ExtResource("5_lwkhm")]
+position = Vector2(-74, -26)
+scale = Vector2(0.59355557, 0.59355557)

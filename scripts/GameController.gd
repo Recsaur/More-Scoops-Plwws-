@@ -3,6 +3,10 @@ extends Node
 @export var Points: int = 0
 
 
+var Consecutive = 0
+var ConsecutiveOrder = 0
+var Completion = false
+
 var ICS_Rotation = 1
 #EVERYTHING TO CALC STATISTICS HERE
 var NumScoopsLaunched = 0 #Number of scoops launched
@@ -12,6 +16,10 @@ var Accuracy = 0 #Accuracy gotten by dividing number of scoops launched by scoop
 #Money earned
 #add in stats for different flavors
 
+func _process(delta: float) -> void:
+	while true:
+		await get_tree().create_timer(3.0).timeout
+		#print("0")
 
 func IceCreamLanded(value:int):
 	Points += value

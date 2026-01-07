@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b783v0ec2k76u"]
+[gd_scene load_steps=5 format=3 uid="uid://b783v0ec2k76u"]
 
 [ext_resource type="Texture2D" uid="uid://1heowg5exrbt" path="res://images/cone.jpg" id="1_2xkri"]
 [ext_resource type="Script" uid="uid://bsenofbpi7i7x" path="res://scripts/ConeScript.gd" id="2_j0p4p"]
+[ext_resource type="AudioStream" uid="uid://dwf8my3iws1f4" path="res://611111__5ro4__bell-ding-3.wav" id="3_eo5sn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8exh8"]
 size = Vector2(800, 139.99998)
@@ -16,10 +17,14 @@ texture = ExtResource("1_2xkri")
 scale = Vector2(0.2, 0.2)
 collision_mask = 3
 script = ExtResource("2_j0p4p")
+Value = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(20.000025, -519.99994)
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_8exh8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_eo5sn")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

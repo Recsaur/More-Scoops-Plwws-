@@ -19,6 +19,7 @@ config/icon="res://images/icon.svg"
 
 EventController="*res://scripts/EventController.gd"
 GameController="*res://scripts/GameController.gd"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [display]
 
@@ -27,7 +28,7 @@ window/size/viewport_height=720
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
 [input]
 
