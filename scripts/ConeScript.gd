@@ -1,9 +1,11 @@
 class_name BaseCone extends Area2D
 
 @onready var Ding = $"../AudioStreamPlayer2D"
-@export var Value: int = 1
+@onready var CODCTimer = get_tree().current_scene.get_node("ConsecutiveOrder")
+@export var Value: int = 10
 
 var Scoops = 0
+var ComboAdd = 0
 const ICECREAM = preload("res://OnConeScoop.tscn")
 #Heyyyyyooo ts can be made so like, have a check for the flavors, and maybe
 #even do somethign like if the cone is like chocolate or golden the value is more
@@ -23,7 +25,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is ICP_Vanilla and body.has_method("MyScoop"):
 		
 		if body.MyScoop():
-			GameController.IceCreamLanded(Value)
+			ComboAdd = GameController.ConsecutiveOrder+1
+			GameController.IceCreamLanded(Value*ComboAdd)
 			#self.queue_free() #add back when you want to stop em from getting
 							   #more points, for now I js did liek so testing
 			
@@ -48,6 +51,8 @@ func _on_body_entered(body: Node2D) -> void:
 				#Ding.play()
 				GameController.CustomersServed += 1
 				GameController.ConsecutiveOrder += 1
+				GameController.CODC_done = true
+				CODCTimer.start()
 				print("DONE")
 				GameController.Completion = true
 				Scoops = 0
@@ -59,7 +64,7 @@ func _on_body_entered(body: Node2D) -> void:
 			#print("Naw not mine")
 			
 		
-	
+
 func PitchCalc():
 	var Pitch: float = 0
 	var val1 = (GameController.ConsecutiveOrder*0.15)

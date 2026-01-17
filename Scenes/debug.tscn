@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://ul7omv7krm54"]
+
+[ext_resource type="Script" uid="uid://b0o6merkig2w2" path="res://debug.gd" id="1_axs6p"]
+[ext_resource type="Texture2D" uid="uid://cqsgaiejvkcro" path="res://images/ilcbicebtigfbisg.jpg" id="2_5k3ys"]
+
+[node name="DEBUG" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_axs6p")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 335.22412
+offset_bottom = 239.0
+scale = Vector2(0.11037392, 0.1974264)
+texture = ExtResource("2_5k3ys")
+
+[node name="SL" type="Label" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = -2.0
+offset_right = 94.0
+offset_bottom = 21.0
+text = "Scoops Launched:"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 179.0
+offset_top = -1.0
+offset_right = 219.0
+offset_bottom = 22.0
+text = "0"
+
+[node name="STC" type="Label" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 15.0
+offset_right = 94.0
+offset_bottom = 38.0
+text = "Scoops to Customers:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 16.0
+offset_right = 247.0
+offset_bottom = 39.0
+text = "0"
+
+[node name="CS" type="Label" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 31.0
+offset_right = 94.0
+offset_bottom = 54.0
+text = "Customers Served:"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 31.0
+offset_right = 226.0
+offset_bottom = 54.0
+text = "0"
+
+[node name="ACC" type="Label" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 47.0
+offset_right = 94.0
+offset_bottom = 70.0
+text = "Accuracy:"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 48.0
+offset_right = 155.0
+offset_bottom = 71.0
+text = "100%"
+
+[node name="COMBO" type="Label" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 65.0
+offset_right = 96.0
+offset_bottom = 88.0
+text = "Combo Multiplier: "
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 66.0
+offset_right = 223.0
+offset_bottom = 89.0
+text = "0"

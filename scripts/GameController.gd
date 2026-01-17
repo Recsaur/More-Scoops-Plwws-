@@ -7,6 +7,8 @@ var Consecutive = 0
 var ConsecutiveOrder = 0
 var Completion = false
 
+
+var CODC_done = false
 var ICS_Rotation = 1
 #EVERYTHING TO CALC STATISTICS HERE
 var NumScoopsLaunched = 0 #Number of scoops launched

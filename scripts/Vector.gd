@@ -5,6 +5,7 @@ extends Area2D
 const ICECREAM = preload("res://Scenes/IceCreamScoop.tscn")
 const CUSTOMER = preload("res://Scenes/customer.tscn")
 @onready var DoneSFX = $AudioStreamPlayer2D
+@onready var CODCTimer = $"../ConsecutiveOrder"
 var touch_down := false
 var position_start := Vector2.ZERO
 var position_end := Vector2.ZERO
@@ -59,7 +60,13 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 		position_start = event.position
 		
 		
-	
+func _process(delta: float) -> void:
+	#print(CODCTimer.time_left)
+	if CODCTimer.is_stopped() and GameController.CODC_done:
+		GameController.CODC_done = false
+		print("OOP time lon")
+		GameController.ConsecutiveOrder = 0
+
 func _on_customer_spawn_timeout() -> void:
 	var rng = RandomNumberGenerator.new()
 	var WaitTimeRand = rng.randf_range(5, 8)

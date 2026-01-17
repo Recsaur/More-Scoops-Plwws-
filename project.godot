@@ -13,6 +13,8 @@ config_version=5
 config/name="More Scoops Plwss!!"
 run/main_scene="uid://c5sptbsrinp51"
 config/features=PackedStringArray("4.5", "Mobile")
+boot_splash/show_image=false
+boot_splash/fullsize=false
 config/icon="res://images/icon.svg"
 
 [autoload]
@@ -25,6 +27,7 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
@@ -46,3 +49,6 @@ ui_touch={
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+anti_aliasing/size/viewport_height=720
+anti_aliasing/size/viewport_width=1280
+anti_aliasing/stretch/scale_mode="fractional"
