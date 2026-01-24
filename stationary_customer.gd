@@ -1,8 +1,5 @@
 extends CharacterBody2D
 
-
-@onready var Start = $"../Start"
-@onready var Limit = $"../Limit"
 @export var Scoops = 0
 const JUMP_VELOCITY = -400.0
 const BOUNDARY = 15

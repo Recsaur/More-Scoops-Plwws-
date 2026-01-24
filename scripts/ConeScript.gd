@@ -7,11 +7,15 @@ class_name BaseCone extends Area2D
 var Scoops = 0
 var ComboAdd = 0
 const ICECREAM = preload("res://OnConeScoop.tscn")
+const TEXTEFFECT = preload("res://Scenes/TextEffect.tscn")
 #Heyyyyyooo ts can be made so like, have a check for the flavors, and maybe
 #even do somethign like if the cone is like chocolate or golden the value is more
 #when passed
 var rng = RandomNumberGenerator.new()
 var ScoopsNeeded = rng.randi_range(1,5)
+
+
+
 
 func _ready() -> void:
 	add_to_group("audio_controllers")
@@ -19,7 +23,6 @@ func _ready() -> void:
 	var VectorNode = get_tree().current_scene.find_child("Vector",true)
 	if VectorNode:
 		print(VectorNode.name)
-	
 		
 func _on_body_entered(body: Node2D) -> void:
 	if body is ICP_Vanilla and body.has_method("MyScoop"):
@@ -43,8 +46,18 @@ func _on_body_entered(body: Node2D) -> void:
 				IceCreamNew.global_position = Vector2(global_position.x,global_position.y+15)
 			
 			
+			#var TextEffect = TEXTEFFECT.instantiate()
+			#var TEparent = get_parent()
+			#print("TS THE PARENT",TEparent)
+			#if TEparent:
+				#parent.add_child(TextEffect)
+				#TextEffect.global_position = Vector2(global_position.x,global_position.y+80)
+			
+			
 			#print("HIT", self)
 			if Scoops >= ScoopsNeeded:
+				GameController.TEx = global_position.x
+				GameController.TEy = global_position.y+15
 				PitchCalc()
 				#if GameController.ConsecutiveOrder > 1: 
 					#Ding.pitch_scale = rng.randf_range((GameController.ConsecutiveOrder*0.15)+0.9,(GameController.ConsecutiveOrder*0.15)+1.1)

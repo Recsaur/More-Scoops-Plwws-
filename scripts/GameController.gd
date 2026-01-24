@@ -7,6 +7,9 @@ var Consecutive = 0
 var ConsecutiveOrder = 0
 var Completion = false
 
+var TEy = 0
+var TEx = 0
+
 
 var CODC_done = false
 var ICS_Rotation = 1
@@ -15,6 +18,7 @@ var NumScoopsLaunched = 0 #Number of scoops launched
 var CustomersServed = 0 #Number of Customers served
 var ScoopsToCustomers = 0 #Number of scoops that got to custoemrs (dont show to players)
 var Accuracy = 0 #Accuracy gotten by dividing number of scoops launched by scoops that got to customers
+@onready var ticked = GameController.ConsecutiveOrder -1
 #Money earned
 #add in stats for different flavors
 

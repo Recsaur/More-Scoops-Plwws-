@@ -10,12 +10,20 @@ var touch_down := false
 var position_start := Vector2.ZERO
 var position_end := Vector2.ZERO
 var vector := Vector2.ZERO
-
-
+const TEXTEFFECT = preload("res://Scenes/TextEffect.tscn")
 
 func _ready() -> void:
 	add_to_group("audio_controllers")
 	connect("input_event", Callable(self, "_on_input_event"))
+	
+#ADD EFFECTS HERE
+#func On_IceCreamPointsAdd(value: int):
+	#var TextEffect = TEXTEFFECT.instantiate()
+	#var TEparent = get_parent()
+	#print("TS THE PARENT",TEparent)
+	#if TEparent:
+		#TEparent.add_child(TextEffect)
+		#TextEffect.global_position = Vector2(global_position.x,global_position.y+80)
 
 func _draw() -> void:
 	draw_line(position_start - global_position, (position_end - global_position), Color.BLANCHED_ALMOND, 10)
@@ -29,7 +37,6 @@ func _reset() -> void:
 	vector = Vector2.ZERO
 	
 	queue_redraw()
-	
 
 func _input(event) -> void:
 	
@@ -66,6 +73,18 @@ func _process(delta: float) -> void:
 		GameController.CODC_done = false
 		print("OOP time lon")
 		GameController.ConsecutiveOrder = 0
+		GameController.ticked = 0
+		
+	if GameController.ticked != GameController.ConsecutiveOrder and GameController.ConsecutiveOrder>1 :
+		GameController.ticked +=1
+		var TextEffect = TEXTEFFECT.instantiate()
+		var TEparent = get_parent()
+		print("TS THE PARENT",TEparent)
+		#if TEparent:
+		TEparent.add_child(TextEffect)
+		TextEffect.global_position = Vector2(GameController.TEx,GameController.TEy)
+		print(GameController.ticked,"HA",GameController.ConsecutiveOrder)
+
 
 func _on_customer_spawn_timeout() -> void:
 	var rng = RandomNumberGenerator.new()
