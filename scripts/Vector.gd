@@ -89,6 +89,7 @@ func _process(delta: float) -> void:
 func _on_customer_spawn_timeout() -> void:
 	var rng = RandomNumberGenerator.new()
 	var WaitTimeRand = rng.randf_range(5, 8)
+	#var WaitTimeRand = rng.randf_range(1, 2)# for debug
 	var new_customer = CUSTOMER.instantiate()
 	var parent = get_parent()
 	if parent:

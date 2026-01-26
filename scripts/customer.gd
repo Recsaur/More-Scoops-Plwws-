@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var Start = $"../Start"
 @onready var Limit = $"../Limit"
 @export var Scoops = 0
+@onready var TimerLabel = $Label2 
 const JUMP_VELOCITY = -400.0
 const BOUNDARY = 15
 var rng = RandomNumberGenerator.new()
@@ -17,7 +18,12 @@ var direction = -1
 func _ready():
 	position = Start.position
 	
+	
 func _physics_process(delta: float) -> void:	
+	TimerLabel.text = str("%.1f" % $Timer.time_left)
+	if $Timer.is_stopped():
+		queue_free()
+
 	if Speed >250 and movement_time_left >2.75:
 		print("TOO FAST")
 		print("Speed is: ", Speed)

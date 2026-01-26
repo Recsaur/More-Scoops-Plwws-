@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdfisnpg6wdou"]
+[gd_scene load_steps=4 format=3 uid="uid://bdfisnpg6wdou"]
 
 [ext_resource type="Script" uid="uid://noqw2ymrrsn4" path="res://Scenes/text_effect.gd" id="1_0p0nh"]
+
+[sub_resource type="FontFile" id="FontFile_0p0nh"]
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="Theme" id="Theme_0p0nh"]
+default_font = SubResource("FontFile_0p0nh")
+default_font_size = 50
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_0p0nh")
 script = ExtResource("1_0p0nh")
 
 [node name="Label" type="Label" parent="."]
@@ -16,5 +33,4 @@ modulate = Color(0.64763075, 0.436848, 0.8799743, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-scale = Vector2(4.908107, 4.908107)
 text = "122"

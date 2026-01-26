@@ -42,3 +42,15 @@ offset_left = 4.0
 offset_top = 56.0
 offset_right = 44.0
 offset_bottom = 79.0
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -100.0
+offset_top = -6.0
+offset_right = -60.0
+offset_bottom = 17.0
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 15.0
+one_shot = true
+autostart = true

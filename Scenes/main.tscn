@@ -17,15 +17,17 @@ size = Vector2(2810, 17)
 
 [node name="Main" type="Node2D"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1283.5555
+offset_bottom = 722.0
+mouse_filter = 2
+texture = ExtResource("1_21xkr")
+expand_mode = 1
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, 360)
 position_smoothing_enabled = true
 script = ExtResource("6_6bp64")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(640.00006, 360.00003)
-scale = Vector2(0.6666667, 0.6666667)
-texture = ExtResource("1_21xkr")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(128, 456)
