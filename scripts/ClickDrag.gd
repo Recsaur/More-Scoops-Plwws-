@@ -43,8 +43,8 @@ func _input(event):
 				
 			drawlen = false
 			print("SHOOT")
-			var new_icecream = ICECREAM.instantiate()
-			get_parent().add_child(new_icecream)
+			#var new_icecream = ICECREAM.instantiate()
+			#get_parent().add_child(new_icecream)
 			print("Mouse Click/Unclick at: ", event.position)
 			queue_redraw()
 			

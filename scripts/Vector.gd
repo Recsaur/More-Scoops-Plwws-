@@ -4,6 +4,7 @@ extends Area2D
 @export var maximum_length := 250
 const ICECREAM = preload("res://Scenes/IceCreamScoop.tscn")
 const CUSTOMER = preload("res://Scenes/customer.tscn")
+const CUSTJASON = preload("res://Scenes/Jason.tscn")
 @onready var DoneSFX = $AudioStreamPlayer2D
 @onready var CODCTimer = $"../ConsecutiveOrder"
 var touch_down := false
@@ -38,8 +39,8 @@ func _reset() -> void:
 	
 	queue_redraw()
 
-func _input(event) -> void:
-	
+
+func _unhandled_input(event: InputEvent) -> void:	
 	if event.is_action_released("ui_touch"):
 		touch_down = false
 		var IceCreamNew = ICECREAM.instantiate()
@@ -58,6 +59,28 @@ func _input(event) -> void:
 		vector = -(position_end - position_start).limit_length(maximum_length)
 		
 		queue_redraw()
+		
+		
+#func _input(event) -> void:
+	#
+	#if event.is_action_released("ui_touch"):
+		#touch_down = false
+		#var IceCreamNew = ICECREAM.instantiate()
+		#var parent = get_parent()
+		#if parent:
+			#parent.add_child(IceCreamNew)
+			#IceCreamNew.global_position = $"../Marker2D".global_position
+			#IceCreamNew.launch(vector)
+		#_reset()
+		#
+	#if not touch_down:
+		#return
+	#
+	#if event is InputEventMouseMotion:
+		#position_end = event.position
+		#vector = -(position_end - position_start).limit_length(maximum_length)
+		#
+		#queue_redraw()
 
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:
@@ -87,16 +110,24 @@ func _process(delta: float) -> void:
 
 
 func _on_customer_spawn_timeout() -> void:
+	var CSPawnTimer = $"../CustomerSpawn"
 	var rng = RandomNumberGenerator.new()
-	var WaitTimeRand = rng.randf_range(5, 8)
+	var WaitTimeRand = rng.randf_range(3, 5)
 	#var WaitTimeRand = rng.randf_range(1, 2)# for debug
-	var new_customer = CUSTOMER.instantiate()
 	var parent = get_parent()
+	var CustomerPicked
+	var CustomerRand = rng.randi_range(1,15)
+	if CustomerRand <= 10:
+		CustomerPicked = CUSTOMER
+	elif CustomerRand > 10:
+		CustomerPicked = CUSTJASON
+	#print(CustomerPicked)
+	var new_customer = CustomerPicked.instantiate()
 	if parent:
 		parent.add_child(new_customer)
 	#print("WAITING timeee:", WaitTimeRand)
-	$"../CustomerSpawn".wait_time = WaitTimeRand
-	$"../CustomerSpawn".start()
+	CSPawnTimer.wait_time = WaitTimeRand
+	CSPawnTimer.start()
 	
 func AudioPlayDone(pitch: float):
 	print("GAAsAGAGAG", pitch)

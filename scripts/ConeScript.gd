@@ -12,18 +12,22 @@ const TEXTEFFECT = preload("res://Scenes/TextEffect.tscn")
 #even do somethign like if the cone is like chocolate or golden the value is more
 #when passed
 var rng = RandomNumberGenerator.new()
-var ScoopsNeeded = rng.randi_range(1,5)
-
-
-
+var ScoopsNeeded = rng.randi_range(1,3)
 
 func _ready() -> void:
 	add_to_group("audio_controllers")
+	var CUSTParent = get_parent().get_parent()
+	if CUSTParent.name == "Customer":
+		print("Found as Customer")
+		ScoopsNeeded = rng.randi_range(1,3)
+	elif CUSTParent.name == "Jason" :
+		print("Found as Jason")
+		ScoopsNeeded = rng.randi_range(5,8)
 	$"../../Label".text = str(ScoopsNeeded)
-	var VectorNode = get_tree().current_scene.find_child("Vector",true)
-	if VectorNode:
-		print(VectorNode.name)
-		
+	#var VectorNode = get_tree().current_scene.find_child("Vector",true)
+	#if VectorNode:
+	#	print(VectorNode.name)
+	
 func _on_body_entered(body: Node2D) -> void:
 	if body is ICP_Vanilla and body.has_method("MyScoop"):
 		

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="More Scoops Plwss!!"
-run/main_scene="uid://c5sptbsrinp51"
+run/main_scene="uid://cs8sdmbha1s5x"
 config/features=PackedStringArray("4.5", "Mobile")
 boot_splash/show_image=false
 boot_splash/fullsize=false

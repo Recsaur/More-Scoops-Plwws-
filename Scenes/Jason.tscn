@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://caj5r8wvv81bs"]
+
+[ext_resource type="Script" uid="uid://dep2ux6spdl3m" path="res://Scenes/jason.gd" id="1_ai15l"]
+[ext_resource type="Texture2D" uid="uid://cvdcmcbw5xyf" path="res://images/Screenshot 2026-01-03 000557.png" id="2_8yxs0"]
+[ext_resource type="Texture2D" uid="uid://cl3eoug5yipro" path="res://Scenes/jass.jpg" id="3_ai15l"]
+[ext_resource type="PackedScene" uid="uid://b783v0ec2k76u" path="res://Scenes/WafCone.tscn" id="4_xqxpc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ta2"]
+size = Vector2(110, 110)
+
+[node name="Jason" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 4
+script = ExtResource("1_ai15l")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1, 69)
+scale = Vector2(0.8022683, 0.9195462)
+texture = ExtResource("2_8yxs0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r8ta2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.6293945e-06, -7)
+scale = Vector2(0.080546096, 0.101235434)
+texture = ExtResource("3_ai15l")
+
+[node name="WaffleCone" parent="." instance=ExtResource("4_xqxpc")]
+position = Vector2(-114, -25)
+scale = Vector2(0.6, 0.6)
+
+[node name="Place" type="Label" parent="."]
+offset_left = -51.0
+offset_top = 55.0
+offset_right = -1.0
+offset_bottom = 78.0
+text = "Order:"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 56.0
+offset_right = 44.0
+offset_bottom = 79.0
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -100.0
+offset_top = -6.0
+offset_right = -60.0
+offset_bottom = 17.0
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 25.0
+one_shot = true
+autostart = true

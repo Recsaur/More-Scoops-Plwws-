@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5sptbsrinp51"]
+[gd_scene load_steps=14 format=3 uid="uid://c5sptbsrinp51"]
 
+[ext_resource type="Script" uid="uid://bq533e15ka0r0" path="res://Scenes/main.gd" id="1_6iyac"]
 [ext_resource type="Texture2D" uid="uid://bomn37m5g5j7y" path="res://images/MSP_bg.png" id="1_21xkr"]
 [ext_resource type="PackedScene" uid="uid://ckji2leywmfux" path="res://Scenes/VectorCreate.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://86ey1mixwtiv" path="res://Scenes/glas.tscn" id="3_jjvhh"]
@@ -16,6 +17,7 @@
 size = Vector2(2810, 17)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_6iyac")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1283.5555
@@ -54,9 +56,6 @@ wait_time = 5.0
 one_shot = true
 autostart = true
 
-[node name="Vector" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(640, 361)
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_344ge")
 
@@ -90,4 +89,17 @@ offset_top = 81.0
 offset_right = 536.0
 offset_bottom = 81.0
 
+[node name="Vector" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(640, 361)
+
+[node name="Pause" type="Button" parent="."]
+process_mode = 3
+offset_left = 43.0
+offset_top = 29.0
+offset_right = 86.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+text = "||"
+
 [connection signal="timeout" from="CustomerSpawn" to="Vector" method="_on_customer_spawn_timeout"]
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
