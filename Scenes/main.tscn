@@ -9,9 +9,9 @@
 [ext_resource type="Script" uid="uid://cennrwpw2wi6n" path="res://Scenes/Cam.gd" id="6_6bp64"]
 [ext_resource type="AudioStream" uid="uid://dwf8my3iws1f4" path="res://611111__5ro4__bell-ding-3.wav" id="8_344ge"]
 [ext_resource type="PackedScene" uid="uid://dqgxq5rbj08c7" path="res://Stationary.tscn" id="9_ynf5e"]
-[ext_resource type="AudioStream" uid="uid://duppu4v00gt0o" path="res://Balatro - Complete Original Soundtrack (Official) [OnGQeVTt4KI].mp3" id="10_hptm8"]
 [ext_resource type="PackedScene" uid="uid://ul7omv7krm54" path="res://Scenes/debug.tscn" id="11_d1ilt"]
 [ext_resource type="Script" uid="uid://c033gnkkechq6" path="res://Scenes/cursor.gd" id="12_6iyac"]
+[ext_resource type="PackedScene" uid="uid://casawssvu8oep" path="res://FadeTransition.tscn" id="12_fdnlq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
 size = Vector2(2810, 17)
@@ -70,7 +70,6 @@ shape = SubResource("RectangleShape2D_344ge")
 position = Vector2(1338, -564)
 
 [node name="BG" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_hptm8")
 autoplay = true
 
 [node name="Cursor" type="Marker2D" parent="."]
@@ -100,6 +99,9 @@ offset_right = 86.0
 offset_bottom = 68.0
 mouse_default_cursor_shape = 2
 text = "||"
+
+[node name="ColorRect" parent="." instance=ExtResource("12_fdnlq")]
+mouse_filter = 2
 
 [connection signal="timeout" from="CustomerSpawn" to="Vector" method="_on_customer_spawn_timeout"]
 [connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

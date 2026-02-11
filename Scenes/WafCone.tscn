@@ -10,6 +10,7 @@ size = Vector2(800, 139.99998)
 [node name="WaffleCone" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_2xkri")
 
@@ -20,7 +21,7 @@ script = ExtResource("2_j0p4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(20.000025, -519.99994)
-scale = Vector2(0.9999998, 0.9999998)
+scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_8exh8")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

@@ -24,7 +24,7 @@ var Accuracy = 0 #Accuracy gotten by dividing number of scoops launched by scoop
 
 func _process(delta: float) -> void:
 	while true:
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(5.0).timeout
 		#print("0")
 
 func IceCreamLanded(value:int):

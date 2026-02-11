@@ -20,10 +20,13 @@ func _ready() -> void:
 	if CUSTParent.name == "Customer":
 		print("Found as Customer")
 		ScoopsNeeded = rng.randi_range(1,3)
-	elif CUSTParent.name == "Jason" :
+	elif CUSTParent is Jason :
 		print("Found as Jason")
 		ScoopsNeeded = rng.randi_range(5,8)
 	$"../../Label".text = str(ScoopsNeeded)
+	print("THIS GUY NEEDS", ScoopsNeeded, CUSTParent.name)
+	
+	
 	#var VectorNode = get_tree().current_scene.find_child("Vector",true)
 	#if VectorNode:
 	#	print(VectorNode.name)

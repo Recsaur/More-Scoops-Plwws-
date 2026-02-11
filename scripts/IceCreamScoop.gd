@@ -23,7 +23,7 @@ func launch(force : Vector2) -> void:
 	await get_tree().physics_frame
 	#apply_central_impulse(force*6.75)
 	apply_central_impulse(force*7)
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(10.0).timeout
 	var IceCreamNew = SPLAT.instantiate()
 	var parent = get_parent()
 	if parent:

@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Jason extends CharacterBody2D
 
 
 @onready var Start = $"../Start"
