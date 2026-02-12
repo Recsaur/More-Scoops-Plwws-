@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxj0ro14ntj5v"]
+[gd_scene load_steps=4 format=3 uid="uid://cxj0ro14ntj5v"]
 
 [ext_resource type="Script" uid="uid://nesdiaab5b6r" path="res://scripts/splat.gd" id="1_16b8e"]
 [ext_resource type="Texture2D" uid="uid://q0ke1gh172ee" path="res://images/splaat.png" id="2_86gu5"]
+[ext_resource type="AudioStream" uid="uid://d02jbdij1iw6u" path="res://audio/splay.mp3" id="2_akjgd"]
 
 [node name="Splat" type="Node2D"]
 script = ExtResource("1_16b8e")
+
+[node name="Splay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_akjgd")
+volume_db = -17.175
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.16685973, 0.16685973)

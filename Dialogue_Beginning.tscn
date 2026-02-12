@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://c13pwovcix0sj"]
+[gd_scene load_steps=7 format=3 uid="uid://c13pwovcix0sj"]
 
 [ext_resource type="Texture2D" uid="uid://meh8mpfiyit4" path="res://images/kiwi1.jpg" id="1_4ac8q"]
+[ext_resource type="Texture2D" uid="uid://ckidovhneaa3x" path="res://images/MSP_DialogueBox.png" id="2_l820i"]
+[ext_resource type="FontFile" uid="uid://c8v22uaibndf2" path="res://misc/Born2bSportyV2.ttf" id="3_qlj6b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlj6b"]
+atlas = ExtResource("2_l820i")
+region = Rect2(400, 0, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_osfci"]
+font = ExtResource("3_qlj6b")
+font_size = 110
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_60tls"]
+font = ExtResource("3_qlj6b")
+font_size = 200
+shadow_size = 0
 
 [node name="Cutscene" type="Control"]
 layout_mode = 3
@@ -12,16 +28,49 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 980.0
-offset_top = 188.0
-offset_right = 1198.0
-offset_bottom = 534.0
+offset_left = 937.0
+offset_top = 115.0
+offset_right = 1155.0
+offset_bottom = 461.0
 texture = ExtResource("1_4ac8q")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 43.0
-offset_top = 447.0
-offset_right = 1236.0
-offset_bottom = 690.0
+offset_left = -19.000002
+offset_top = 201.99998
+offset_right = 4942.0
+offset_bottom = 3698.0
+scale = Vector2(0.2010143, 0.2010143)
+texture = ExtResource("2_l820i")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 410.00003
+offset_top = 202.00003
+offset_right = 5371.0
+offset_bottom = 3698.0
+scale = Vector2(0.2010143, 0.2010143)
+texture = SubResource("AtlasTexture_qlj6b")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 494.0
+offset_right = 2454.0
+offset_bottom = 833.0
+scale = Vector2(0.45188463, 0.45188463)
+text = "Hey there new Cruit! (that's slang for recruit btw)...
+Welcome to your second home, the Scoops Parlor!
+ I'll be teaching you some of the basics before we start."
+label_settings = SubResource("LabelSettings_osfci")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 387.0
+offset_right = 1793.0
+offset_bottom = 587.0
+scale = Vector2(0.3968979, 0.3968979)
+text = "John Scoops (Manager)"
+label_settings = SubResource("LabelSettings_60tls")

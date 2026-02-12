@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckji2leywmfux"]
+[gd_scene load_steps=6 format=3 uid="uid://ckji2leywmfux"]
 
 [ext_resource type="Script" uid="uid://c0jgx33487v31" path="res://scripts/Vector.gd" id="1_kr2rk"]
 [ext_resource type="AudioStream" uid="uid://dwf8my3iws1f4" path="res://611111__5ro4__bell-ding-3.wav" id="2_b7mtq"]
+[ext_resource type="AudioStream" uid="uid://dxhmiormdc5l2" path="res://audio/launch.wav" id="2_ct024"]
+[ext_resource type="AudioStream" uid="uid://etl3mht4u78t" path="res://audio/bend.wav" id="4_0yvqq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7mtq"]
 size = Vector2(1281, 723)
@@ -15,6 +17,14 @@ shape = SubResource("RectangleShape2D_b7mtq")
 
 [node name="ConsTimer" type="Timer" parent="."]
 
+[node name="Launch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ct024")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_b7mtq")
 volume_db = -10.098
+
+[node name="Bend" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0yvqq")
+volume_db = 1.5
+pitch_scale = 1.25

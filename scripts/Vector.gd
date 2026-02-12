@@ -12,6 +12,7 @@ var position_start := Vector2.ZERO
 var position_end := Vector2.ZERO
 var vector := Vector2.ZERO
 const TEXTEFFECT = preload("res://Scenes/TextEffect.tscn")
+var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	add_to_group("audio_controllers")
@@ -41,23 +42,35 @@ func _reset() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:	
+	var rng = RandomNumberGenerator.new()
+	var LaunchPitch
+	var BendPitch 
 	if event.is_action_released("ui_touch"):
 		touch_down = false
+		$Bend.stop()
 		var IceCreamNew = ICECREAM.instantiate()
 		var parent = get_parent()
 		if parent:
 			parent.add_child(IceCreamNew)
 			IceCreamNew.global_position = $"../Marker2D".global_position
 			IceCreamNew.launch(vector)
+		LaunchPitch = rng.randf_range(1, 1.15)
+		$Launch.pitch_scale = LaunchPitch
+		$Launch.play()
 		_reset()
 		
+		
 	if not touch_down:
+		
 		return
 	
 	if event is InputEventMouseMotion:
 		position_end = event.position
 		vector = -(position_end - position_start).limit_length(maximum_length)
-		
+		if not $Bend.playing:
+			BendPitch = rng.randf_range(1.15, 1.25)
+			$Bend.pitch_scale = BendPitch
+			$Bend.play()
 		queue_redraw()
 		
 		
@@ -84,10 +97,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:
-	
 	if event.is_action_pressed("ui_touch"):
 		touch_down = true
 		position_start = event.position
+
 		
 		
 func _process(delta: float) -> void:
