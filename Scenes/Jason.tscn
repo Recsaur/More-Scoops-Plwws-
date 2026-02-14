@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://caj5r8wvv81bs"]
+[gd_scene load_steps=7 format=3 uid="uid://caj5r8wvv81bs"]
 
 [ext_resource type="Script" uid="uid://dep2ux6spdl3m" path="res://Scenes/jason.gd" id="1_ai15l"]
 [ext_resource type="Texture2D" uid="uid://cvdcmcbw5xyf" path="res://images/Screenshot 2026-01-03 000557.png" id="2_8yxs0"]
 [ext_resource type="Texture2D" uid="uid://cl3eoug5yipro" path="res://Scenes/jass.jpg" id="3_ai15l"]
 [ext_resource type="PackedScene" uid="uid://b783v0ec2k76u" path="res://Scenes/WafCone.tscn" id="4_xqxpc"]
+[ext_resource type="AudioStream" uid="uid://d31fojet4vskq" path="res://audio/gone.wav" id="5_8yxs0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ta2"]
 size = Vector2(110, 110)
@@ -54,3 +55,7 @@ process_callback = 0
 wait_time = 25.0
 one_shot = true
 autostart = true
+
+[node name="Gone" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8yxs0")
+volume_db = -10.266

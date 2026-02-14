@@ -2,14 +2,14 @@ extends Node
 
 @export var Points: int = 0
 
-
+var DayCounter = 1
 var Consecutive = 0
 var ConsecutiveOrder = 0
 var Completion = false
 
 var TEy = 0
 var TEx = 0
-
+var DayPosY
 
 var CODC_done = false
 var ICS_Rotation = 1

@@ -12,16 +12,23 @@ var Speed = rng.randf_range(75, 200)
 var movement_time_left = rng.randf_range(1.75, 4)
 var ScoopsNeeded = rng.randi_range(5,8)
 var direction = -1
-
+var flag = 0
 
 
 func _ready():
 	position = Start.position
 	#print(ScoopsNeeded,"JASON")
-	
+
+
 func _physics_process(delta: float) -> void:	
 	TimerLabel.text = str("%.1f" % $Timer.time_left)
 	if $Timer.is_stopped():
+		hide()
+		if flag == 0:
+			flag +=1
+			$Gone.play()
+		await get_tree().create_timer(1.0).timeout
+		print("GBSHBHFDBSFISDBIFUENIFWENI")
 		queue_free()
 	
 	if Speed >250 and movement_time_left >2.75:

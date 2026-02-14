@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct15ufgkwun8o"]
+
+[ext_resource type="FontFile" uid="uid://c8v22uaibndf2" path="res://misc/Born2bSportyV2.ttf" id="1_crnn0"]
+
+[sub_resource type="GDScript" id="GDScript_tjpj0"]
+resource_name = "DayShower"
+script/source = "extends Node2D
+
+@onready var day = $CanvasLayer/Panel/Label
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	day.text = str(\"Day \",GameController.DayCounter)
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_CUBIC)
+	
+	tween.tween_property($CanvasLayer/Panel,\"modulate:a\",1,0.25)
+	tween.tween_property(day,\"position\",Vector2(4000,day.position.y),3)
+	tween.set_ease(Tween.EASE_IN)
+	tween.tween_property(day,\"position\",Vector2(8000,day.position.y),3)
+	tween.tween_property($CanvasLayer/Panel,\"modulate:a\",0,0.25)
+	GameController.DayCounter += 1
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_w7l15"]
+font = ExtResource("1_crnn0")
+font_size = 175
+
+[node name="DayControl" type="Node2D"]
+script = SubResource("GDScript_tjpj0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -165.0
+offset_top = 263.0
+offset_right = -125.0
+offset_bottom = 303.0
+scale = Vector2(4.160897, 1.3908521)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3321.0
+offset_top = -291.0
+offset_right = 2920.0137
+offset_bottom = -113.9212
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.73978364, 0.73978364)
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -486.8899
+offset_top = -196.0
+offset_right = 490.1101
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Day 67"
+label_settings = SubResource("LabelSettings_w7l15")
+horizontal_alignment = 1
+vertical_alignment = 1
