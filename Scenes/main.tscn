@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5sptbsrinp51"]
+[gd_scene load_steps=16 format=3 uid="uid://c5sptbsrinp51"]
 
 [ext_resource type="Script" uid="uid://bq533e15ka0r0" path="res://Scenes/main.gd" id="1_6iyac"]
 [ext_resource type="Texture2D" uid="uid://bomn37m5g5j7y" path="res://images/MSP_bg.png" id="1_21xkr"]
@@ -8,10 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://djsmo4sk2to2w" path="res://Scenes/points_ui.tscn" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://cennrwpw2wi6n" path="res://Scenes/Cam.gd" id="6_6bp64"]
 [ext_resource type="AudioStream" uid="uid://dwf8my3iws1f4" path="res://611111__5ro4__bell-ding-3.wav" id="8_344ge"]
+[ext_resource type="AudioStream" uid="uid://bwctp0nsnq2xc" path="res://audio/blop.wav" id="8_jkdf5"]
 [ext_resource type="PackedScene" uid="uid://dqgxq5rbj08c7" path="res://Stationary.tscn" id="9_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://ul7omv7krm54" path="res://Scenes/debug.tscn" id="11_d1ilt"]
 [ext_resource type="Script" uid="uid://c033gnkkechq6" path="res://Scenes/cursor.gd" id="12_6iyac"]
 [ext_resource type="PackedScene" uid="uid://casawssvu8oep" path="res://FadeTransition.tscn" id="12_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://cgkjupmhmatax" path="res://Scenes/PauseScreen.tscn" id="13_fdnlq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
 size = Vector2(2810, 17)
@@ -45,7 +47,7 @@ scale = Vector2(4.7849665, 4.7849665)
 position = Vector2(443, 572)
 
 [node name="Start" type="Marker2D" parent="."]
-position = Vector2(1340, 417)
+position = Vector2(1420, 417)
 
 [node name="ConsecutiveOrder" type="Timer" parent="."]
 wait_time = 3.0
@@ -72,6 +74,9 @@ position = Vector2(1338, -564)
 [node name="BG" type="AudioStreamPlayer2D" parent="."]
 autoplay = true
 
+[node name="Blopp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_jkdf5")
+
 [node name="Cursor" type="Marker2D" parent="."]
 position = Vector2(641, 362)
 script = ExtResource("12_6iyac")
@@ -89,7 +94,11 @@ offset_right = 536.0
 offset_bottom = 81.0
 
 [node name="Vector" parent="." instance=ExtResource("3_8gbba")]
+process_mode = 4
 position = Vector2(640, 361)
+
+[node name="Control" parent="." instance=ExtResource("13_fdnlq")]
+visible = false
 
 [node name="Pause" type="Button" parent="."]
 process_mode = 3

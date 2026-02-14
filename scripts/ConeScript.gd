@@ -22,7 +22,7 @@ func _ready() -> void:
 		ScoopsNeeded = rng.randi_range(1,3)
 	elif CUSTParent is Jason :
 		print("Found as Jason")
-		ScoopsNeeded = rng.randi_range(5,8)
+		ScoopsNeeded = rng.randi_range(3,6)
 	$"../../Label".text = str(ScoopsNeeded)
 	print("THIS GUY NEEDS", ScoopsNeeded, CUSTParent.name)
 	

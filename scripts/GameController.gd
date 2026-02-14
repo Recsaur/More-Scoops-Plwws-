@@ -22,6 +22,15 @@ var Accuracy = 0 #Accuracy gotten by dividing number of scoops launched by scoop
 #Money earned
 #add in stats for different flavors
 
+func NextDia():
+	var DiaAudio = AudioStreamPlayer2D.new()
+	DiaAudio.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(DiaAudio)
+	DiaAudio.stream = load("res://audio/blop.wav")
+	DiaAudio.play()
+	DiaAudio.finished.connect(DiaAudio.queue_free)
+
+
 func _process(delta: float) -> void:
 	while true:
 		await get_tree().create_timer(5.0).timeout
