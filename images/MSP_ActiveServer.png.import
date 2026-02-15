@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy1asj3v3hc4m"
-path.s3tc="res://.godot/imported/MSP_Continue.png-a1b7bc583aae45c6697cac666798703d.s3tc.ctex"
+uid="uid://bhamytiu5l54o"
+path.s3tc="res://.godot/imported/MSP_ActiveServer.png-7e9d514265946440bb444a3196e7d25c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://images/MSP_Continue.png"
-dest_files=["res://.godot/imported/MSP_Continue.png-a1b7bc583aae45c6697cac666798703d.s3tc.ctex"]
+source_file="res://images/MSP_ActiveServer.png"
+dest_files=["res://.godot/imported/MSP_ActiveServer.png-7e9d514265946440bb444a3196e7d25c.s3tc.ctex"]
 
 [params]
 

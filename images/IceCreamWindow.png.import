@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddjnh0fdulkgt"
-path="res://.godot/imported/IceCreamWindow.png-21f9cb6fda58ccbdb41623c3b062ca3c.ctex"
+path.s3tc="res://.godot/imported/IceCreamWindow.png-21f9cb6fda58ccbdb41623c3b062ca3c.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://images/IceCreamWindow.png"
-dest_files=["res://.godot/imported/IceCreamWindow.png-21f9cb6fda58ccbdb41623c3b062ca3c.ctex"]
+dest_files=["res://.godot/imported/IceCreamWindow.png-21f9cb6fda58ccbdb41623c3b062ca3c.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bomn37m5g5j7y"
-path="res://.godot/imported/MSP_bg.png-75d8ef01951689a7c26d44502de3350d.ctex"
+path.s3tc="res://.godot/imported/MSP_bg.png-75d8ef01951689a7c26d44502de3350d.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://images/MSP_bg.png"
-dest_files=["res://.godot/imported/MSP_bg.png-75d8ef01951689a7c26d44502de3350d.ctex"]
+dest_files=["res://.godot/imported/MSP_bg.png-75d8ef01951689a7c26d44502de3350d.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

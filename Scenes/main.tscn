@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c5sptbsrinp51"]
+[gd_scene load_steps=20 format=3 uid="uid://c5sptbsrinp51"]
 
 [ext_resource type="Script" uid="uid://bq533e15ka0r0" path="res://Scenes/main.gd" id="1_6iyac"]
 [ext_resource type="Texture2D" uid="uid://bomn37m5g5j7y" path="res://images/MSP_bg.png" id="1_21xkr"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://casawssvu8oep" path="res://FadeTransition.tscn" id="12_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://cgkjupmhmatax" path="res://Scenes/PauseScreen.tscn" id="13_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://cyk0xsbup6eqo" path="res://images/MSP_Pause.png" id="15_k12tt"]
+[ext_resource type="AudioStream" uid="uid://cktpljvm14422" path="res://audio/freesound_community-cash-register-purchase-87313.mp3" id="18_b3802"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
 size = Vector2(2810, 17)
@@ -109,7 +110,7 @@ process_mode = 4
 position = Vector2(640, 361)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 10
+layer = 6
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("13_fdnlq")]
 visible = false
@@ -131,5 +132,13 @@ visible = false
 z_index = 5
 mouse_filter = 2
 
+[node name="DayTimer" type="Timer" parent="." groups=["DayTimer"]]
+wait_time = 4.0
+one_shot = true
+
+[node name="FreesoundCommunityCashRegisterPurchase87313" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_b3802")
+
 [connection signal="timeout" from="CustomerSpawn" to="Vector" method="_on_customer_spawn_timeout"]
 [connection signal="pressed" from="CanvasLayer/Pause" to="." method="_on_pause_pressed"]
+[connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]

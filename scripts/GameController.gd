@@ -6,10 +6,15 @@ var DayCounter = 1
 var Consecutive = 0
 var ConsecutiveOrder = 0
 var Completion = false
-
 var TEy = 0
 var TEx = 0
 var DayPosY
+var Preston = false
+
+var Card1flipped = false
+var Card2flipped = false
+
+
 
 var CODC_done = false
 var ICS_Rotation = 1
@@ -22,6 +27,12 @@ var Accuracy = 0 #Accuracy gotten by dividing number of scoops launched by scoop
 #Money earned
 #add in stats for different flavors
 
+func _ready() -> void:
+	EventController.connect("IceCreamLanded", PointsFunc)
+
+func PointsFunc(value: int):
+	Points = value
+	
 func NextDia():
 	var DiaAudio = AudioStreamPlayer2D.new()
 	DiaAudio.process_mode = Node.PROCESS_MODE_ALWAYS
@@ -30,8 +41,16 @@ func NextDia():
 	DiaAudio.play()
 	DiaAudio.finished.connect(DiaAudio.queue_free)
 
+func ShopDing():
+	var ShopAudio = AudioStreamPlayer2D.new()
+	ShopAudio.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(ShopAudio)
+	ShopAudio.stream = load("res://audio/freesound_community-cash-register-purchase-87313.mp3")
+	ShopAudio.play()
+	ShopAudio.finished.connect(ShopAudio.queue_free)
 
 func _process(delta: float) -> void:
+	print(Points)
 	while true:
 		await get_tree().create_timer(5.0).timeout
 		#print("0")

@@ -1,0 +1,334 @@
+[gd_scene load_steps=18 format=3 uid="uid://blq20e8e4bkap"]
+
+[ext_resource type="Texture2D" uid="uid://bhamytiu5l54o" path="res://images/MSP_ActiveServer.png" id="1_lkycc"]
+[ext_resource type="FontFile" uid="uid://c8v22uaibndf2" path="res://misc/Born2bSportyV2.ttf" id="2_pc5gd"]
+[ext_resource type="Texture2D" uid="uid://bkqsuomrgtxbb" path="res://images/MSP_BetterIngredients.png" id="3_pc5gd"]
+[ext_resource type="Texture2D" uid="uid://d4nxjh7fpc73g" path="res://images/MSP_CardBack.png" id="4_81f03"]
+[ext_resource type="AudioStream" uid="uid://bwctp0nsnq2xc" path="res://audio/blop.wav" id="4_kydre"]
+
+[sub_resource type="GDScript" id="GDScript_kydre"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().get_first_node_in_group(\"DayTimer\").start()
+	$\".\".queue_free()
+	pass # Replace with function body.
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kydre"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2490
+corner_radius_top_right = 700
+corner_radius_bottom_right = 410
+corner_radius_bottom_left = 480
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81f03"]
+bg_color = Color(0, 0, 0, 0.4862745)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+
+[sub_resource type="Theme" id="Theme_lwoum"]
+FlatMenuButton/styles/normal = SubResource("StyleBoxFlat_kydre")
+Panel/styles/panel = SubResource("StyleBoxFlat_81f03")
+
+[sub_resource type="LabelSettings" id="LabelSettings_x534q"]
+font = ExtResource("2_pc5gd")
+font_size = 250
+font_color = Color(0.78088135, 0.27102056, 0.337556, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k7wgu"]
+font = ExtResource("2_pc5gd")
+font_size = 250
+font_color = Color(0.4957896, 0.64663756, 0.31307003, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rexyw"]
+font = ExtResource("2_pc5gd")
+font_size = 611
+font_color = Color(0.05075966, 0.050750062, 0.24892545, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wso74"]
+font = ExtResource("2_pc5gd")
+font_size = 321
+font_color = Color(0.21073186, 0.21501145, 0.69220203, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4qigb"]
+font = ExtResource("2_pc5gd")
+font_size = 500
+font_color = Color(2.7340002, 2.7340002, 2.7340002, 1)
+
+[sub_resource type="GDScript" id="GDScript_pc5gd"]
+script/source = "extends Button
+var card_back = preload(\"res://images/MSP_CardBack.png\")
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	if GameController.Card1flipped:
+		$\"../../Sprite2D4\".show()
+		$\"..\".hide()
+	if GameController.Card2flipped:
+		$\"../../Sprite2D3\".show()
+		$\"../../Sprite2D2\".hide()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+func _on_mouse_entered() -> void:
+	var tween = create_tween()
+	get_parent().modulate = Color(1.1, 1.1, 1.1, 1.0)
+	$\"../../../AudioStreamPlayer2D\".play()
+	tween.tween_property(get_parent(),\"scale\",Vector2(0.067,0.067),0.5).set_trans(Tween.TRANS_BACK)
+
+
+func _on_mouse_exited() -> void:
+	var tween = create_tween()
+	get_parent().modulate = Color(1, 1, 1, 1.0)
+	tween.tween_property(get_parent(),\"scale\",Vector2(0.062,0.062),0.5).set_trans(Tween.TRANS_ELASTIC)
+
+
+func _on_pressed() -> void:
+	if not GameController.Card1flipped:
+		GameController.Points -= 100
+		print(\"pressed 1\")
+		get_tree().paused = false
+		get_tree().get_first_node_in_group(\"DayTimer\").start()
+		GameController.Card1flipped = true
+		GameController.ShopDing()
+
+		$\"../../..\".queue_free()
+		pass # Replace with function body.
+
+
+func _on_button_pressed() -> void:
+	if not GameController.Card2flipped:
+		GameController.Points -= 250
+		print(\"pressed 2\")
+		get_tree().paused = false
+		get_tree().get_first_node_in_group(\"DayTimer\").start()
+		GameController.Card2flipped = true
+		GameController.ShopDing()
+
+		$\"../../..\".queue_free()
+	pass # Replace with function body.
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_kydre"]
+font = ExtResource("2_pc5gd")
+font_size = 300
+font_color = Color(0.4957896, 0.64663756, 0.31307003, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_81f03"]
+font = ExtResource("2_pc5gd")
+font_size = 281
+font_color = Color(0.21073186, 0.21501145, 0.69220203, 1)
+
+[node name="ShopPreston" type="Node2D"]
+process_mode = 3
+script = SubResource("GDScript_kydre")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1287.0
+offset_bottom = 725.0
+color = Color(0, 0, 0, 0.15686275)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(463, 353.99997)
+scale = Vector2(0.061933056, 0.061933044)
+texture = ExtResource("1_lkycc")
+
+[node name="ColorRect2" type="Panel" parent="CanvasLayer/Sprite2D"]
+offset_left = -1372.4453
+offset_top = -3423.0508
+offset_right = 1324.0142
+offset_bottom = -2987.0967
+theme = SubResource("Theme_lwoum")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="CanvasLayer/Sprite2D"]
+offset_left = -2195.9197
+offset_top = 2551.1426
+offset_right = 2324.0803
+offset_bottom = 3198.1426
+text = "-Customer loss penalty 
+increase 100 -> 200"
+label_settings = SubResource("LabelSettings_x534q")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="CanvasLayer/Sprite2D"]
+offset_left = -1582.3536
+offset_top = 2002.1627
+offset_right = 1695.3793
+offset_bottom = 2649.1626
+text = "+Customer wait time
+increase +5 seconds"
+label_settings = SubResource("LabelSettings_k7wgu")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Sprite2D"]
+offset_left = -2115.187
+offset_top = -468.24707
+offset_right = 1054.813
+offset_bottom = 143.75293
+text = "Active Server"
+label_settings = SubResource("LabelSettings_rexyw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/Sprite2D"]
+offset_left = -1969.869
+offset_top = 129.1721
+offset_right = 14794.131
+offset_bottom = 2586.172
+text = "Please don't make them wait any 
+longer -or else they'd be more 
+irritated after tolerating your 
+service speed. Show off your
+customer service skills!"
+label_settings = SubResource("LabelSettings_wso74")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Sprite2D"]
+offset_left = -2050.601
+offset_top = 1856.8442
+offset_right = 2050.6006
+offset_bottom = 1896.8442
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="CanvasLayer/Sprite2D"]
+offset_left = -1630.793
+offset_top = -3423.051
+offset_right = 1539.207
+offset_bottom = -2811.051
+text = "100 Points"
+label_settings = SubResource("LabelSettings_4qigb")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="CanvasLayer/Sprite2D"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -2661.2893
+offset_top = -3838.7097
+offset_right = 2725.8083
+offset_bottom = 3692.7668
+flat = true
+script = SubResource("GDScript_pc5gd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(824.99994, 355)
+scale = Vector2(0.062, 0.062)
+texture = ExtResource("3_pc5gd")
+
+[node name="ColorRect2" type="Panel" parent="CanvasLayer/Sprite2D2"]
+offset_left = -1372.4453
+offset_top = -3423.0508
+offset_right = 1324.0142
+offset_bottom = -2987.0967
+theme = SubResource("Theme_lwoum")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Sprite2D2"]
+offset_left = -1582.3536
+offset_top = 2177.4194
+offset_right = 1695.3793
+offset_bottom = 2824.4192
+text = "+Customer orders payment
+increase 50 ->100"
+label_settings = SubResource("LabelSettings_kydre")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Sprite2D2"]
+offset_left = -2115.187
+offset_top = -468.24707
+offset_right = 1054.813
+offset_bottom = 143.75293
+text = "Better Ingredients"
+label_settings = SubResource("LabelSettings_rexyw")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Sprite2D2"]
+offset_left = -1969.869
+offset_top = 129.1721
+offset_right = 14794.131
+offset_bottom = 2586.172
+text = "For the sake of the customers and 
+their taste buds! (and maybe for 
+better profits...) Found a supplier that 
+gives us the utmost highest quality 
+ingredients coming all the way from 
+the corner store around the street."
+label_settings = SubResource("LabelSettings_81f03")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Sprite2D2"]
+offset_left = -2050.601
+offset_top = 1856.8442
+offset_right = 2050.6006
+offset_bottom = 1896.8442
+
+[node name="Label5" type="Label" parent="CanvasLayer/Sprite2D2"]
+offset_left = -1630.793
+offset_top = -3423.051
+offset_right = 1539.207
+offset_bottom = -2811.051
+text = "250 Points"
+label_settings = SubResource("LabelSettings_4qigb")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Sprite2D2"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -2661.2893
+offset_top = -3838.7097
+offset_right = 2725.8083
+offset_bottom = 3692.7668
+flat = true
+script = SubResource("GDScript_pc5gd")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 541.0
+offset_top = 596.0
+offset_right = 742.29034
+offset_bottom = 661.0
+text = "Leave Shop"
+
+[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(462, 354)
+scale = Vector2(0.062, 0.062)
+texture = ExtResource("4_81f03")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(825, 354)
+scale = Vector2(0.062, 0.062)
+texture = ExtResource("4_81f03")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_kydre")
+
+[connection signal="mouse_entered" from="CanvasLayer/Sprite2D/Button" to="CanvasLayer/Sprite2D/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Sprite2D/Button" to="CanvasLayer/Sprite2D/Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Sprite2D/Button" to="CanvasLayer/Sprite2D/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Sprite2D2/Button" to="CanvasLayer/Sprite2D2/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Sprite2D2/Button" to="CanvasLayer/Sprite2D2/Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Sprite2D2/Button" to="CanvasLayer/Sprite2D/Button" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

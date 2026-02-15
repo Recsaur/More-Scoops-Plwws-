@@ -6,6 +6,7 @@ Manager Scoops: [do GameController.NextDia()]Hey there new Cruit! (that's slang 
 Manager Scoops: [do GameController.NextDia()]You'll be equipped with a scoop, [wait=0.2]click and drag anywhere and release to shoot a scoop of ice cream from your scoop on the left hand side! [wait=0.2]\nThe longer the line the stronger the force when it launches.
 Manager Scoops: [do GameController.NextDia()]Shoot ice cream scoops on the cones of customers, the number of scoops they want is displayed above them along with a timer that shows how much time until they get impatient and leave.
 Manager Scoops: [do GameController.NextDia()]You'll get a penalty if you lose any customers, [wait=0.2]on the contrary, [wait=0.2]you can get a bonus multiplier when completing consecutive orders without missing shots!
+Manager Scoops: [do GameController.NextDia()]There's also a day cycle that lasts a minute. At the start of each day, a shop will open up where you can buy some upgrades and finishing a day also gives you a bonus based off your accuracy. [wait=0.2]
 Manager Scoops: [do GameController.NextDia()]That's all you need ta' really know about the job, nothing complex for now. [wait=0.2]\nPretty simple eh? Got any questions?
 
 - [do GameController.NextDia()]I think I get the gist of things now, thanks!
