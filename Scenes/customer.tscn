@@ -89,8 +89,9 @@ label_settings = SubResource("LabelSettings_fhub2")
 process_callback = 0
 wait_time = 15.0
 one_shot = true
-autostart = true
 
 [node name="Gone" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_2o0mk")
 volume_db = -10.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

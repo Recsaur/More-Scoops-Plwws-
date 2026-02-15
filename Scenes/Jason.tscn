@@ -54,8 +54,9 @@ offset_bottom = 55.0
 process_callback = 0
 wait_time = 25.0
 one_shot = true
-autostart = true
 
 [node name="Gone" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_8yxs0")
 volume_db = -10.266
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

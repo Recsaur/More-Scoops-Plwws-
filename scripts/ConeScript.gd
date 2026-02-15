@@ -77,6 +77,9 @@ func _on_body_entered(body: Node2D) -> void:
 				GameController.Completion = true
 				Scoops = 0
 				#await get_tree().create_timer(3.0).timeout
+				
+				GameController.Points += GameController.OrderFinBonus
+				
 				get_parent().get_parent().queue_free()
 				queue_free()
 		else:

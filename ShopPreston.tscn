@@ -73,14 +73,14 @@ font_color = Color(2.7340002, 2.7340002, 2.7340002, 1)
 [sub_resource type="GDScript" id="GDScript_pc5gd"]
 script/source = "extends Button
 var card_back = preload(\"res://images/MSP_CardBack.png\")
-
+@export var card: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if GameController.Card1flipped:
+	if card == 1 and GameController.Card1flipped:
 		$\"../../Sprite2D4\".show()
 		$\"..\".hide()
-	if GameController.Card2flipped:
+	if card == 2 and GameController.Card2flipped:
 		$\"../../Sprite2D3\".show()
 		$\"../../Sprite2D2\".hide()
 	pass # Replace with function body.
@@ -89,6 +89,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
 func _on_mouse_entered() -> void:
 	var tween = create_tween()
 	get_parent().modulate = Color(1.1, 1.1, 1.1, 1.0)
@@ -103,28 +104,36 @@ func _on_mouse_exited() -> void:
 
 
 func _on_pressed() -> void:
-	if not GameController.Card1flipped:
-		GameController.Points -= 100
-		print(\"pressed 1\")
-		get_tree().paused = false
-		get_tree().get_first_node_in_group(\"DayTimer\").start()
-		GameController.Card1flipped = true
-		GameController.ShopDing()
-
-		$\"../../..\".queue_free()
+	if GameController.Points >= 100:
+		if GameController.Card1flipped == false:
+			GameController.Points -= 100
+			print(\"pressed 1\")
+			get_tree().paused = false
+			get_tree().get_first_node_in_group(\"DayTimer\").start()
+			GameController.Card1flipped = true
+			GameController.ShopDing()
+			GameController.CustLossPenalty = 200
+			GameController.CustTimeInc = 5
+			$\"../../..\".queue_free()
+	else:
+		GameController.Error()
+		#play sum error sfx here
 		pass # Replace with function body.
 
 
 func _on_button_pressed() -> void:
-	if not GameController.Card2flipped:
-		GameController.Points -= 250
-		print(\"pressed 2\")
-		get_tree().paused = false
-		get_tree().get_first_node_in_group(\"DayTimer\").start()
-		GameController.Card2flipped = true
-		GameController.ShopDing()
-
-		$\"../../..\".queue_free()
+	if GameController.Points >= 250:
+		if GameController.Card2flipped == false:
+			GameController.Points -= 250
+			print(\"pressed 2\")
+			get_tree().paused = false
+			get_tree().get_first_node_in_group(\"DayTimer\").start()
+			GameController.Card2flipped = true
+			GameController.ShopDing()
+			GameController.OrderFinBonus = 100
+			$\"../../..\".queue_free()
+	else:
+		GameController.Error()
 	pass # Replace with function body.
 "
 
@@ -233,6 +242,7 @@ offset_right = 2725.8083
 offset_bottom = 3692.7668
 flat = true
 script = SubResource("GDScript_pc5gd")
+card = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
@@ -302,6 +312,7 @@ offset_right = 2725.8083
 offset_bottom = 3692.7668
 flat = true
 script = SubResource("GDScript_pc5gd")
+card = 2
 
 [node name="Button" type="Button" parent="CanvasLayer"]
 offset_left = 541.0

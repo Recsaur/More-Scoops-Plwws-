@@ -16,6 +16,8 @@ var flag = 0
 
 
 func _ready():
+	$Timer.wait_time = 15 + GameController.CustTimeInc
+	$Timer.start()
 	position = Start.position
 	#print(ScoopsNeeded,"JASON")
 
@@ -53,3 +55,8 @@ func _physics_process(delta: float) -> void:
 		#queue_free()
 	#
 	
+
+
+func _on_timer_timeout() -> void:
+	GameController.Points -= GameController.CustLossPenalty
+	pass # Replace with function body.

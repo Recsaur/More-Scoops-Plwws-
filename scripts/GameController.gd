@@ -14,6 +14,9 @@ var Preston = false
 var Card1flipped = false
 var Card2flipped = false
 
+var CustLossPenalty = 100
+var CustTimeInc = 0
+var OrderFinBonus = 50
 
 
 var CODC_done = false
@@ -48,6 +51,14 @@ func ShopDing():
 	ShopAudio.stream = load("res://audio/freesound_community-cash-register-purchase-87313.mp3")
 	ShopAudio.play()
 	ShopAudio.finished.connect(ShopAudio.queue_free)
+
+func Error():
+	var NotEnough = AudioStreamPlayer2D.new()
+	NotEnough.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(NotEnough)
+	NotEnough.stream = load("res://audio/Insufficient.wav")
+	NotEnough.play()
+	NotEnough.finished.connect(NotEnough.queue_free)
 
 func _process(delta: float) -> void:
 	print(Points)
