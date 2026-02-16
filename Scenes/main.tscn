@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c5sptbsrinp51"]
+[gd_scene load_steps=21 format=3 uid="uid://c5sptbsrinp51"]
 
 [ext_resource type="Script" uid="uid://bq533e15ka0r0" path="res://Scenes/main.gd" id="1_6iyac"]
 [ext_resource type="Texture2D" uid="uid://bomn37m5g5j7y" path="res://images/MSP_bg.png" id="1_21xkr"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cgkjupmhmatax" path="res://Scenes/PauseScreen.tscn" id="13_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://cyk0xsbup6eqo" path="res://images/MSP_Pause.png" id="15_k12tt"]
 [ext_resource type="AudioStream" uid="uid://cktpljvm14422" path="res://audio/freesound_community-cash-register-purchase-87313.mp3" id="18_b3802"]
+[ext_resource type="PackedScene" uid="uid://blxt4ut06kfmt" path="res://Scenes/VersionCount.tscn" id="19_fevyy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
 size = Vector2(2810, 17)
@@ -34,6 +35,10 @@ expand_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, 360)
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 720
 position_smoothing_enabled = true
 script = ExtResource("6_6bp64")
 
@@ -118,6 +123,8 @@ visible = false
 [node name="Pause" type="Button" parent="CanvasLayer"]
 process_mode = 3
 visible = false
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 28.0
 offset_top = 29.0
 offset_right = 1065.0
@@ -128,16 +135,20 @@ icon = ExtResource("15_k12tt")
 flat = true
 
 [node name="ColorRect" parent="." instance=ExtResource("12_fdnlq")]
-visible = false
 z_index = 5
 mouse_filter = 2
 
 [node name="DayTimer" type="Timer" parent="." groups=["DayTimer"]]
-wait_time = 4.0
+wait_time = 30.0
 one_shot = true
 
 [node name="FreesoundCommunityCashRegisterPurchase87313" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_b3802")
+
+[node name="BuildVer" type="CanvasLayer" parent="."]
+layer = 101
+
+[node name="Version" parent="BuildVer" instance=ExtResource("19_fevyy")]
 
 [connection signal="timeout" from="CustomerSpawn" to="Vector" method="_on_customer_spawn_timeout"]
 [connection signal="pressed" from="CanvasLayer/Pause" to="." method="_on_pause_pressed"]

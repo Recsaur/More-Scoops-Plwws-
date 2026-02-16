@@ -3,22 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://q0ke1gh172ee"
-path.s3tc="res://.godot/imported/splaat.png-7a5e1e4567576c1dca5fecb4c660fe2f.s3tc.ctex"
+path="res://.godot/imported/splaat.png-7a5e1e4567576c1dca5fecb4c660fe2f.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://images/splaat.png"
-dest_files=["res://.godot/imported/splaat.png-7a5e1e4567576c1dca5fecb4c660fe2f.s3tc.ctex"]
+dest_files=["res://.godot/imported/splaat.png-7a5e1e4567576c1dca5fecb4c660fe2f.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.5
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

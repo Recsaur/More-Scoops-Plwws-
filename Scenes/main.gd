@@ -8,10 +8,10 @@ var finishedtut = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	DialogueManager.dialogue_ended.connect(DiaEnded)
 	$ColorRect/AnimationPlayer.play("FadeIn")
 	await $ColorRect/AnimationPlayer.animation_finished
 	await get_tree().create_timer(0.5).timeout
+	DialogueManager.dialogue_ended.connect(DiaEnded)
 	get_tree().paused = true
 	TutDialogue()
 
