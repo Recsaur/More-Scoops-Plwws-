@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs8sdmbha1s5x"]
+[gd_scene load_steps=17 format=3 uid="uid://cs8sdmbha1s5x"]
 
 [ext_resource type="Script" uid="uid://dhcm76motnwda" path="res://node_2d.gd" id="1_i26rj"]
 [ext_resource type="Texture2D" uid="uid://bfc5l7e3p8pj6" path="res://images/MSP_MainMenuBG.png" id="2_h7a2f"]
@@ -6,6 +6,72 @@
 [ext_resource type="Texture2D" uid="uid://cpvw3xakx4iyn" path="res://images/MSP_MC_MM.png" id="3_qoqlk"]
 [ext_resource type="PackedScene" uid="uid://casawssvu8oep" path="res://FadeTransition.tscn" id="5_iwfq2"]
 [ext_resource type="PackedScene" uid="uid://blxt4ut06kfmt" path="res://Scenes/VersionCount.tscn" id="6_7r1g0"]
+[ext_resource type="FontFile" uid="uid://c8v22uaibndf2" path="res://misc/Born2bSportyV2.ttf" id="7_cqjrg"]
+
+[sub_resource type="GDScript" id="GDScript_e2xy7"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_button_pressed() -> void:
+	$\".\".hide()
+	pass # Replace with function body.
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_fimr5"]
+font = ExtResource("7_cqjrg")
+font_size = 131
+font_color = Color(0.894165, 0.6174205, 0.54326373, 1)
+outline_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_u7cqb"]
+font = ExtResource("7_cqjrg")
+font_size = 50
+font_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_afec1"]
+font = ExtResource("7_cqjrg")
+font_size = 50
+font_color = Color(0.3515629, 0.3515629, 0.35156283, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_31qfy"]
+line_spacing = 25.0
+font = ExtResource("7_cqjrg")
+font_size = 50
+font_color = Color(0.32544088, 0.3254409, 0.32544082, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qie43"]
+line_spacing = -24.055
+font = ExtResource("7_cqjrg")
+font_size = 105
+font_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_61cf8"]
+paragraph_spacing = -10.0
+font = ExtResource("7_cqjrg")
+font_size = 50
+font_color = Color(0.33288068, 0.3328807, 0.3328806, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rnncn"]
+font = ExtResource("7_cqjrg")
+font_size = 105
+font_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3fnrj"]
+font = ExtResource("7_cqjrg")
+font_size = 70
+font_color = Color(1.2207218, 0.41286087, 0.48575056, 1)
+outline_size = 25
+outline_color = Color(0, 0, 0.3924328, 0.8392157)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_i26rj")
@@ -28,9 +94,9 @@ texture = ExtResource("3_iwfq2")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = -12.0
+offset_left = 32.0
 offset_top = -10.0
-offset_right = 1118.983
+offset_right = 1162.983
 offset_bottom = 787.0
 texture = ExtResource("3_qoqlk")
 expand_mode = 1
@@ -47,22 +113,16 @@ offset_left = 683.0
 offset_top = 375.0
 offset_right = 1078.0
 offset_bottom = 479.0
+mouse_default_cursor_shape = 2
 text = "Start"
-
-[node name="Settings" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 694.0
-offset_top = 493.0
-offset_right = 1068.0
-offset_bottom = 592.0
-text = "Sett"
 
 [node name="Credits" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 691.0
-offset_top = 608.0
-offset_right = 1078.0
-offset_bottom = 712.0
+offset_left = 687.0
+offset_top = 519.0
+offset_right = 1074.0
+offset_bottom = 623.0
+mouse_default_cursor_shape = 2
 text = "Cred"
 
 [node name="ColorRect" parent="." instance=ExtResource("5_iwfq2")]
@@ -75,7 +135,211 @@ layer = 50
 
 [node name="Version" parent="BuildVer" instance=ExtResource("6_7r1g0")]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+script = SubResource("GDScript_e2xy7")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = -1.0
+offset_top = -82.0
+offset_right = 1286.0785
+offset_bottom = 825.0
+texture = ExtResource("2_h7a2f")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.8509804, 1)
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 829.0
+offset_top = 588.0
+offset_right = 1049.0
+offset_bottom = 670.0
+text = "Return to Main Menu"
+
+[node name="CREDITS" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -184.6087
+offset_right = 184.6087
+offset_bottom = 132.0
+grow_horizontal = 2
+text = "CREDITS"
+label_settings = SubResource("LabelSettings_fimr5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ST" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.0
+offset_top = 143.0
+offset_right = 664.0
+offset_bottom = 275.0
+grow_horizontal = 2
+text = "Special Thanks:"
+label_settings = SubResource("LabelSettings_u7cqb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PPL" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 167.0
+offset_right = 871.0
+offset_bottom = 1098.0
+grow_horizontal = 2
+scale = Vector2(0.44573236, 0.44573236)
+text = "-FlashLemon 
+For playtesting and 
+letting me spam to do stuff in dms)
+
+-NotD00dlez 
+For playtesting and Jason customer 
+character (the one with the shirt) design
+
+-Fahdiy
+For playtesting and being a 
+pro player of the game"
+label_settings = SubResource("LabelSettings_afec1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PPL2" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 240.0
+offset_top = 116.0
+offset_right = 1231.0
+offset_bottom = 1047.0
+grow_horizontal = 2
+scale = Vector2(0.44573236, 0.44573236)
+text = "-Kopi
+For playtesting and getting addicted 
+with the simple game loop
+
+-Milkyway/Hacklub
+For hosting the cool Milkyway event
+and giving this cool opportunity"
+label_settings = SubResource("LabelSettings_afec1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -588.0
+offset_top = 191.0
+offset_right = 263.0
+offset_bottom = 470.0
+grow_horizontal = 2
+scale = Vector2(0.5672434, 0.5672434)
+text = "Developer - Recsaur (me)
+Art and Design - Recsaur (me)
+Dialogue Manager 3 Plugin- nathanhoad
+"
+label_settings = SubResource("LabelSettings_31qfy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MSFX" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -701.0
+offset_top = 365.0
+offset_right = 856.0
+offset_bottom = 580.0
+grow_horizontal = 2
+scale = Vector2(0.48149994, 0.48149994)
+text = "Music and SFX (from 
+free to use sites):"
+label_settings = SubResource("LabelSettings_qie43")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="M" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -633.0
+offset_top = 430.99997
+offset_right = 503.0
+offset_bottom = 968.0
+grow_horizontal = 2
+scale = Vector2(0.5331116, 0.5331116)
+text = "Shop Music - Jazz Bossa Nova 
+by Anastasia Chubarova
+
+Main Game Music - Soft Jazz Piano Music 
+by Clavier Music
+
+Pause Menu Music - Ending Elevator 
+by kittencatpuppydog88
+"
+label_settings = SubResource("LabelSettings_61cf8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MSFX2" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -723.0
+offset_top = 114.0
+offset_right = 834.0
+offset_bottom = 329.0
+grow_horizontal = 2
+scale = Vector2(0.48149994, 0.48149994)
+text = "Programming and Art:"
+label_settings = SubResource("LabelSettings_rnncn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PPL3" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 174.0
+offset_top = 308.0
+offset_right = 1165.0
+offset_bottom = 1239.0
+grow_horizontal = 2
+rotation = -0.13972615
+scale = Vector2(0.44573236, 0.44573236)
+text = "AND YOU!! FOR PLAYING 
+THIS GAME (≧∇≦)ﾉ"
+label_settings = SubResource("LabelSettings_3fnrj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -492.5
+offset_top = -609.0
+offset_right = 492.5
+offset_bottom = -599.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.29954746, 0.29954746, 0.29954743, 1)
+
 [connection signal="pressed" from="Control/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Control/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Control/Credits" to="." method="_on_credits_pressed"]
 [connection signal="timeout" from="ColorRect/FadeTimer" to="." method="_on_fade_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer" method="_on_button_pressed"]

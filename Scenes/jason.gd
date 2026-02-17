@@ -16,7 +16,7 @@ var flag = 0
 
 
 func _ready():
-	$Timer.wait_time = 15 + GameController.CustTimeInc
+	$Timer.wait_time = 25 + GameController.CustTimeInc
 	$Timer.start()
 	position = Start.position
 	#print(ScoopsNeeded,"JASON")

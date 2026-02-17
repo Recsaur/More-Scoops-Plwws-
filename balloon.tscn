@@ -259,6 +259,7 @@ offset_bottom = 1006.6074
 grow_horizontal = 1
 scale = Vector2(0.34641534, 0.34641534)
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme = SubResource("Theme_4nd2f")
 theme_override_colors/default_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
 theme_override_fonts/normal_font = ExtResource("4_wxbh2")

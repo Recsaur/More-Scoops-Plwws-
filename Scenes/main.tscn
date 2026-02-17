@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c5sptbsrinp51"]
+[gd_scene load_steps=22 format=3 uid="uid://c5sptbsrinp51"]
 
 [ext_resource type="Script" uid="uid://bq533e15ka0r0" path="res://Scenes/main.gd" id="1_6iyac"]
 [ext_resource type="Texture2D" uid="uid://bomn37m5g5j7y" path="res://images/MSP_bg.png" id="1_21xkr"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://djsmo4sk2to2w" path="res://Scenes/points_ui.tscn" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://cennrwpw2wi6n" path="res://Scenes/Cam.gd" id="6_6bp64"]
 [ext_resource type="AudioStream" uid="uid://kowlbub6vy6w" path="res://audio/kittencatpuppydog88-endingelevator-152337.mp3" id="6_h1bgf"]
+[ext_resource type="AudioStream" uid="uid://c1eedy362lhvt" path="res://audio/clavier-music-soft-jazz-piano-music-233868.mp3" id="7_hibaj"]
 [ext_resource type="AudioStream" uid="uid://d31fojet4vskq" path="res://audio/gone.wav" id="7_wsu2k"]
 [ext_resource type="AudioStream" uid="uid://dwf8my3iws1f4" path="res://611111__5ro4__bell-ding-3.wav" id="8_344ge"]
 [ext_resource type="AudioStream" uid="uid://bwctp0nsnq2xc" path="res://audio/blop.wav" id="8_jkdf5"]
@@ -71,6 +72,12 @@ autostart = true
 stream = ExtResource("6_h1bgf")
 volume_db = -10.495
 
+[node name="ClavierMusicSoftJazzPianoMusic233868" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("7_hibaj")
+volume_db = -15.0
+autoplay = true
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_344ge")
 
@@ -123,12 +130,10 @@ visible = false
 [node name="Pause" type="Button" parent="CanvasLayer"]
 process_mode = 3
 visible = false
-modulate = Color(1, 1, 1, 0)
-self_modulate = Color(1, 1, 1, 0)
 offset_left = 28.0
 offset_top = 29.0
-offset_right = 1065.0
-offset_bottom = 1180.0
+offset_right = 1414.0
+offset_bottom = 1551.0
 scale = Vector2(0.05356068, 0.05356068)
 mouse_default_cursor_shape = 2
 icon = ExtResource("15_k12tt")

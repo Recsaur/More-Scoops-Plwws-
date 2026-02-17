@@ -1,54 +1,40 @@
-[gd_scene load_steps=7 format=3 uid="uid://caj5r8wvv81bs"]
+[gd_scene load_steps=10 format=3 uid="uid://caj5r8wvv81bs"]
 
 [ext_resource type="Script" uid="uid://dep2ux6spdl3m" path="res://Scenes/jason.gd" id="1_ai15l"]
-[ext_resource type="Texture2D" uid="uid://cvdcmcbw5xyf" path="res://images/Screenshot 2026-01-03 000557.png" id="2_8yxs0"]
-[ext_resource type="Texture2D" uid="uid://cl3eoug5yipro" path="res://Scenes/jass.jpg" id="3_ai15l"]
+[ext_resource type="Texture2D" uid="uid://b86shnkwvhfu5" path="res://images/MSP_Shadow.png" id="2_n3qq4"]
+[ext_resource type="Texture2D" uid="uid://cxsv8lhh6k5fu" path="res://images/MSP_Jason.png" id="4_sdct1"]
 [ext_resource type="PackedScene" uid="uid://b783v0ec2k76u" path="res://Scenes/WafCone.tscn" id="4_xqxpc"]
 [ext_resource type="AudioStream" uid="uid://d31fojet4vskq" path="res://audio/gone.wav" id="5_8yxs0"]
+[ext_resource type="Texture2D" uid="uid://bkgroigikqgwd" path="res://images/MSP_TimeUI.png" id="7_m6uk4"]
+[ext_resource type="Texture2D" uid="uid://mti5dsjwfno" path="res://images/MSP_OrderUI.png" id="8_quqva"]
+[ext_resource type="LabelSettings" uid="uid://cg5u3jnwp03he" path="res://misc/customer.tres" id="9_fplxe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ta2"]
-size = Vector2(110, 110)
+size = Vector2(90, 149.5)
 
 [node name="Jason" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 4
 script = ExtResource("1_ai15l")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(1, 69)
-scale = Vector2(0.8022683, 0.9195462)
-texture = ExtResource("2_8yxs0")
+[node name="ColorRect" type="Sprite2D" parent="."]
+position = Vector2(-4.9999986, 160)
+rotation = 0.056979116
+scale = Vector2(0.06401647, 0.025851263)
+texture = ExtResource("2_n3qq4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 50.75)
 shape = SubResource("RectangleShape2D_r8ta2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-7.6293945e-06, -7)
-scale = Vector2(0.080546096, 0.101235434)
-texture = ExtResource("3_ai15l")
+position = Vector2(-18.000004, 25)
+scale = Vector2(0.08892306, 0.088923045)
+texture = ExtResource("4_sdct1")
 
 [node name="WaffleCone" parent="." instance=ExtResource("4_xqxpc")]
-position = Vector2(-114, -25)
-scale = Vector2(0.6, 0.6)
-
-[node name="Place" type="Label" parent="."]
-offset_left = -51.0
-offset_top = 55.0
-offset_right = -1.0
-offset_bottom = 78.0
-text = "Order:"
-
-[node name="Label" type="Label" parent="."]
-offset_left = 4.0
-offset_top = 56.0
-offset_right = 44.0
-offset_bottom = 79.0
-
-[node name="Label2" type="Label" parent="."]
-offset_left = -130.0
-offset_top = 32.0
-offset_right = -90.0
-offset_bottom = 55.0
+position = Vector2(-97.00001, 9.999998)
+scale = Vector2(0.43597752, 0.43597752)
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
@@ -58,5 +44,36 @@ one_shot = true
 [node name="Gone" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_8yxs0")
 volume_db = -10.266
+
+[node name="MspTimeUi" type="Sprite2D" parent="."]
+position = Vector2(101, -90)
+scale = Vector2(0.058650937, 0.058650937)
+texture = ExtResource("7_m6uk4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-0.9999962, -175.00002)
+scale = Vector2(0.04976872, 0.04976872)
+texture = ExtResource("8_quqva")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 30.0
+offset_top = -162.00002
+offset_right = 826.0
+offset_bottom = 249.99998
+scale = Vector2(0.07339088, 0.07339088)
+text = "67.67"
+label_settings = ExtResource("9_fplxe")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -93.0
+offset_top = -168.0
+offset_right = 267.0
+offset_bottom = 244.0
+scale = Vector2(0.12270544, 0.12270544)
+text = "67"
+label_settings = ExtResource("9_fplxe")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -8,14 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bkgroigikqgwd" path="res://images/MSP_TimeUI.png" id="5_fhub2"]
 [ext_resource type="FontFile" uid="uid://c8v22uaibndf2" path="res://misc/Born2bSportyV2.ttf" id="6_fhub2"]
 [ext_resource type="AudioStream" uid="uid://d31fojet4vskq" path="res://audio/gone.wav" id="7_2o0mk"]
+[ext_resource type="LabelSettings" uid="uid://cg5u3jnwp03he" path="res://misc/customer.tres" id="7_olakf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ta2"]
 size = Vector2(110, 110)
-
-[sub_resource type="LabelSettings" id="LabelSettings_vkxjs"]
-font = ExtResource("6_fhub2")
-font_size = 411
-font_color = Color(0.14044744, 0.14044744, 0.14044744, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fhub2"]
 font = ExtResource("6_fhub2")
@@ -47,7 +43,7 @@ scale = Vector2(0.08268382, 0.08268381)
 texture = ExtResource("3_qf3me")
 
 [node name="WaffleCone" parent="." instance=ExtResource("3_f7asb")]
-position = Vector2(-101.99999, -47.999996)
+position = Vector2(-94.99999, -50.999996)
 scale = Vector2(0.42838103, 0.42838103)
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
@@ -72,7 +68,7 @@ offset_right = 368.0
 offset_bottom = 347.0
 scale = Vector2(0.12547083, 0.12547083)
 text = "67"
-label_settings = SubResource("LabelSettings_vkxjs")
+label_settings = ExtResource("7_olakf")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

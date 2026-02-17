@@ -10,6 +10,8 @@ var TEy = 0
 var TEx = 0
 var DayPosY
 var Preston = false
+var BGMusicMain = 0
+
 
 var Card1flipped = false
 var Card2flipped = false
