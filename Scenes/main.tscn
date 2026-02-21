@@ -154,7 +154,6 @@ icon = ExtResource("15_k12tt")
 flat = true
 
 [node name="ColorRect" parent="." instance=ExtResource("12_fdnlq")]
-visible = false
 z_index = 5
 mouse_filter = 2
 
