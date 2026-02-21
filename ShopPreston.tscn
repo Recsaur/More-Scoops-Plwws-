@@ -120,7 +120,7 @@ func _on_pressed() -> void:
 			#get_tree().get_first_node_in_group(\"DayTimer\").start()
 			GameController.Card1flipped = true
 			GameController.ShopDing()
-			GameController.CustLossPenalty = 200
+			GameController.CustLossPenalty = 150
 			GameController.CustTimeInc = 5
 			#GameController.Preston = false
 			#$\"../../..\".queue_free()
@@ -131,6 +131,7 @@ func _on_pressed() -> void:
 
 
 func _on_button_pressed() -> void:
+	var tween = create_tween()
 	if GameController.Points >= 1250:
 		if GameController.Card2flipped == false:
 			GameController.Points -= 1250
@@ -143,6 +144,7 @@ func _on_button_pressed() -> void:
 			#GameController.Preston = false
 			#$\"../../..\".queue_free()
 	else:
+		#tween.tween_property(get_parent(),\"modulate\",Color(1.1, 1.1, 1.1, 1.0),Color(0.761, 0.465, 0.641, 1.0))
 		GameController.Error()
 	pass # Replace with function body.
 "
@@ -171,7 +173,7 @@ color = Color(0, 0, 0, 0.15686275)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(463, 353.99997)
-scale = Vector2(0.061933056, 0.061933044)
+scale = Vector2(0.367, 0.062)
 texture = ExtResource("1_lkycc")
 
 [node name="ColorRect2" type="Panel" parent="CanvasLayer/Sprite2D"]
@@ -188,7 +190,7 @@ offset_top = 2551.1426
 offset_right = 2324.0803
 offset_bottom = 3198.1426
 text = "-Customer loss penalty 
-increase 100 -> 200"
+increase 100 -> 150"
 label_settings = SubResource("LabelSettings_x534q")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true

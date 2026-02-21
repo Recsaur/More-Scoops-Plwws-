@@ -33,6 +33,7 @@ var Accuracy = 0 #Accuracy gotten by dividing number of scoops launched by scoop
 #add in stats for different flavors
 
 func _ready() -> void:
+	#pass
 	EventController.connect("IceCreamLanded", PointsFunc)
 
 func PointsFunc(value: int):

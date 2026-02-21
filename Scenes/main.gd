@@ -6,6 +6,7 @@ const DayAppear = preload("res://Scenes/day_control.tscn")
 const PrestonShop = preload("res://ShopPreston.tscn")
 var finishedtut = false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$ColorRect/AnimationPlayer.play("FadeIn")
@@ -37,6 +38,7 @@ func DiaEnded(_chuunibyo):
 	$Vector.process_mode = $Vector.PROCESS_MODE_INHERIT
 
 func _process(_delta: float) -> void:
+	$TimeLeft.text = str("%.0f" % $DayTimer.time_left)
 	pass
 	
 func _on_pause_pressed() -> void:
@@ -64,3 +66,8 @@ func _on_day_timer_timeout() -> void:
 	add_child(PrestonNOW)
 	get_tree().paused = true
 	
+
+
+func _on_clavier_music_soft_jazz_piano_music_233868_finished() -> void:
+	$ClavierMusicSoftJazzPianoMusic233868.play()
+	pass # Replace with function body.

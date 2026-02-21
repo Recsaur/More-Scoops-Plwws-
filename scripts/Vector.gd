@@ -124,12 +124,12 @@ func _process(delta: float) -> void:
 
 func _on_customer_spawn_timeout() -> void:
 	var CSPawnTimer = $"../CustomerSpawn"
-	var rng = RandomNumberGenerator.new()
+	#var rng = RandomNumberGenerator.new()
 	var WaitTimeRand = rng.randf_range(3, 5)
 	#var WaitTimeRand = rng.randf_range(1, 2)# for debug
 	var parent = get_parent()
 	var CustomerPicked
-	var CustomerRand = rng.randi_range(1,15)
+	var CustomerRand = rng.randi_range(1,17)
 	if CustomerRand <= 10:
 		CustomerPicked = CUSTOMER
 	elif CustomerRand > 10:

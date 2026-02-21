@@ -129,6 +129,7 @@ text = "Cred"
 visible = false
 
 [node name="FadeTimer" type="Timer" parent="ColorRect"]
+wait_time = 3.0
 
 [node name="BuildVer" type="CanvasLayer" parent="."]
 layer = 50

@@ -1,4 +1,6 @@
 extends Node2D
+const maingame = preload("res://Scenes/main.tscn")
+
 
 var button_type = null
 
@@ -17,6 +19,7 @@ func _on_start_pressed() -> void:
 	$ColorRect.show()
 	$ColorRect/FadeTimer.start()
 	$ColorRect/AnimationPlayer.play("FadeOut")
+	
 	pass # Replace with function body.
 
 
@@ -27,4 +30,4 @@ func _on_credits_pressed() -> void:
 
 func _on_fade_timer_timeout() -> void:
 	if button_type == "Start":
-		get_tree().change_scene_to_file("res://Scenes/main.tscn")
+		get_tree().change_scene_to_packed(maingame)

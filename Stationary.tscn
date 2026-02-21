@@ -6,37 +6,39 @@
 [ext_resource type="PackedScene" uid="uid://cdlj1uexaes51" path="res://Scenes/WafCone_Stationary.tscn" id="5_lwkhm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egxtd"]
-size = Vector2(110, 110)
+size = Vector2(110, 43)
 
 [node name="StationaryCustomer" type="CharacterBody2D"]
 script = ExtResource("1_jqocp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(1, 69)
+position = Vector2(26.961052, 46)
 scale = Vector2(0.8022683, 0.9195462)
 texture = ExtResource("2_lwkhm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(22, 5)
 shape = SubResource("RectangleShape2D_egxtd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2.000001, 1.999999)
-scale = Vector2(0.20392157, 0.37630662)
+position = Vector2(16, 3.9999971)
+scale = Vector2(0.25490198, 0.20557491)
 texture = ExtResource("3_cifrh")
 
 [node name="Place" type="Label" parent="."]
-offset_left = -51.0
-offset_top = 55.0
-offset_right = -1.0
-offset_bottom = 78.0
+offset_left = -25.038948
+offset_top = 32.0
+offset_right = 24.961052
+offset_bottom = 55.0
 text = "Order:"
 
 [node name="Label" type="Label" parent="."]
-offset_left = 4.0
-offset_top = 56.0
-offset_right = 44.0
-offset_bottom = 79.0
+offset_left = 29.961052
+offset_top = 33.0
+offset_right = 84.96105
+offset_bottom = 56.0
+text = "676767"
 
 [node name="WaffleCone2" parent="." instance=ExtResource("5_lwkhm")]
-position = Vector2(-74, -26)
-scale = Vector2(0.59355557, 0.59355557)
+position = Vector2(-46, -24.999996)
+scale = Vector2(0.3199104, 0.3199104)

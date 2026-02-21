@@ -9,3 +9,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
+	rotation = clamp(rotation,deg_to_rad(-10),deg_to_rad(25))

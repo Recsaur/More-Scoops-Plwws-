@@ -1,5 +1,5 @@
 extends Camera2D
-@export var RandStrength: float = 2.0 
+@export var RandStrength: float = 5.0 
 @export var ShakeFade: float = 5.0
 var OffsetAmt: Vector2 = Vector2(0,0)
 var rng = RandomNumberGenerator.new()

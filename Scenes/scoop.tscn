@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ds7ghhgnba25w"]
 
 [ext_resource type="Script" uid="uid://drrj8ps8oinj" path="res://scripts/ScoopLook.gd" id="2_cy3ik"]
-[ext_resource type="Texture2D" uid="uid://byjuolfcl2e3v" path="res://images/scoop.jpg" id="3_eeuw5"]
+[ext_resource type="Texture2D" uid="uid://dcrk2fog7erds" path="res://images/MSP_PlayerScoop.png" id="2_ius6g"]
 
 [node name="Scoop" type="Node2D"]
 position = Vector2(616, 378)
@@ -12,6 +12,6 @@ position = Vector2(616, 378)
 script = ExtResource("2_cy3ik")
 
 [node name="Sprite2D" type="Sprite2D" parent="ClickDrag/ScoopImg"]
-scale = Vector2(0.38235295, 0.38235295)
-texture = ExtResource("3_eeuw5")
-flip_h = true
+position = Vector2(1.7166138e-05, 0)
+scale = Vector2(0.09792286, 0.09792286)
+texture = ExtResource("2_ius6g")

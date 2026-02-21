@@ -1,10 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://c5sptbsrinp51"]
+[gd_scene load_steps=24 format=3 uid="uid://c5sptbsrinp51"]
 
 [ext_resource type="Script" uid="uid://bq533e15ka0r0" path="res://Scenes/main.gd" id="1_6iyac"]
 [ext_resource type="Texture2D" uid="uid://bomn37m5g5j7y" path="res://images/MSP_bg.png" id="1_21xkr"]
 [ext_resource type="PackedScene" uid="uid://ckji2leywmfux" path="res://Scenes/VectorCreate.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://86ey1mixwtiv" path="res://Scenes/glas.tscn" id="3_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://b86shnkwvhfu5" path="res://images/MSP_Shadow.png" id="4_ee4r6"]
 [ext_resource type="PackedScene" uid="uid://ds7ghhgnba25w" path="res://Scenes/scoop.tscn" id="4_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://dwk5yikrafqp0" path="res://images/MSP_Player.png" id="4_pdsj5"]
 [ext_resource type="PackedScene" uid="uid://djsmo4sk2to2w" path="res://Scenes/points_ui.tscn" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://cennrwpw2wi6n" path="res://Scenes/Cam.gd" id="6_6bp64"]
 [ext_resource type="AudioStream" uid="uid://kowlbub6vy6w" path="res://audio/kittencatpuppydog88-endingelevator-152337.mp3" id="6_h1bgf"]
@@ -46,8 +48,19 @@ script = ExtResource("6_6bp64")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(128, 456)
 
+[node name="ColorRect2" type="Sprite2D" parent="."]
+position = Vector2(156, 613)
+rotation = 0.056979116
+scale = Vector2(0.06412183, 0.025893807)
+texture = ExtResource("4_ee4r6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(163.875, 437.93726)
+scale = Vector2(0.08745709, 0.087457076)
+texture = ExtResource("4_pdsj5")
+
 [node name="Scoop" parent="." instance=ExtResource("4_jjvhh")]
-position = Vector2(86, 544)
+position = Vector2(162.875, 432.93726)
 
 [node name="IceCreamWindow" parent="." instance=ExtResource("3_jjvhh")]
 position = Vector2(365, 544)
@@ -92,7 +105,8 @@ position = Vector2(660, -1.5)
 shape = SubResource("RectangleShape2D_344ge")
 
 [node name="StationaryCustomer" parent="StaticBody2D" instance=ExtResource("9_ynf5e")]
-position = Vector2(1338, -564)
+position = Vector2(1232, -609)
+scale = Vector2(0.6094302, 0.6094302)
 
 [node name="BG" type="AudioStreamPlayer2D" parent="."]
 autoplay = true
@@ -140,6 +154,7 @@ icon = ExtResource("15_k12tt")
 flat = true
 
 [node name="ColorRect" parent="." instance=ExtResource("12_fdnlq")]
+visible = false
 z_index = 5
 mouse_filter = 2
 
@@ -155,6 +170,13 @@ layer = 101
 
 [node name="Version" parent="BuildVer" instance=ExtResource("19_fevyy")]
 
+[node name="TimeLeft" type="Label" parent="."]
+offset_left = 340.0
+offset_top = 12.0
+offset_right = 380.0
+offset_bottom = 35.0
+
 [connection signal="timeout" from="CustomerSpawn" to="Vector" method="_on_customer_spawn_timeout"]
+[connection signal="finished" from="ClavierMusicSoftJazzPianoMusic233868" to="." method="_on_clavier_music_soft_jazz_piano_music_233868_finished"]
 [connection signal="pressed" from="CanvasLayer/Pause" to="." method="_on_pause_pressed"]
 [connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]

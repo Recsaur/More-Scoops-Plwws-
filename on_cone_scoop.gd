@@ -8,6 +8,7 @@ var PitchAmt = GameController.Consecutive*0.05
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$GPUParticles2D.emitting = true
 	if GameController.Consecutive > 1:	
 		LandSFX.pitch_scale = PitchAmt+1
 		LandSFX2.pitch_scale = PitchAmt+1
@@ -19,7 +20,7 @@ func _ready() -> void:
 	LandSFX3.play()
 	
 	
-	Spritescoop.scale = Vector2(0.65,0.2)
+	Spritescoop.scale = Vector2(0.7,0.15)
 	Spritescoop.position.y += 20
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
