@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu6jmcxrfv7pq"]
+
+[ext_resource type="FontFile" uid="uid://c8v22uaibndf2" path="res://misc/Born2bSportyV2.ttf" id="1_llbtl"]
+
+[sub_resource type="GDScript" id="GDScript_llbtl"]
+script/source = "extends Control
+
+@onready var label = $Label
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	var tween = create_tween()
+	tween.tween_property(label,\"position\",Vector2(label.position.x,label.position.y-50),1.5)
+	tween.tween_property(label,\"modulate:a\",0.0,1.5)
+	label.text = str(\"-\",GameController.PenaltyAcc)
+	await get_tree().create_timer(3.0).timeout
+	self.queue_free()
+	pass
+	
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_1twgt"]
+font = ExtResource("1_llbtl")
+font_size = 150
+font_color = Color(0.7285387, 0.15768622, 0.23341154, 1)
+outline_size = 50
+outline_color = Color(0.18417254, 0.072477676, 1.6845763e-07, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eetbw"]
+font = ExtResource("1_llbtl")
+font_size = 150
+font_color = Color(1, 0.105882354, 0.22745098, 1)
+outline_size = 50
+outline_color = Color(0.06469658, 0.06469651, 0.06469653, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.3, 2.3)
+script = SubResource("GDScript_llbtl")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 53.687614
+offset_top = 23.590012
+offset_right = 419.99805
+offset_bottom = 220.19856
+scale = Vector2(0.175, 0.175)
+text = "67"
+label_settings = SubResource("LabelSettings_1twgt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = -288.4982
+offset_top = -136.82567
+offset_right = 639.50183
+offset_bottom = 14.174332
+text = "Accuracy Penalty!"
+label_settings = SubResource("LabelSettings_eetbw")

@@ -1,14 +1,15 @@
 ~ start
 
-Manager Scoops: [do GameController.NextDia()]Hey there new Cruit! (that's slang for recruit btw)... \nWelcome to your second home, the Scoops Parlor![wait=0.2] \nI'll be teaching you some of the basics before we start.
+Manager Scoops: [do GameController.NextDia()]Wassup new Cruit! (that's slang for recruit btw)... \nWelcome to your second home, the Scoops Parlor![wait=0.2] \nI'll be teaching you some of the basics before we start.
 ~ Retell
 
 Manager Scoops: [do GameController.NextDia()]You'll be equipped with a scoop, [wait=0.2]click and drag anywhere and release to shoot a scoop of ice cream from your scoop on the left hand side! [wait=0.2]\nThe longer the line the stronger the force when it launches.
 Manager Scoops: [do GameController.NextDia()]Shoot ice cream scoops on the cones of customers, the number of scoops they want is displayed above them along with a timer that shows how much time until they get impatient and leave.
 Manager Scoops: [do GameController.NextDia()]You'll get a penalty if you lose any customers, [wait=0.2]on the contrary, [wait=0.2]you can get a bonus multiplier when completing consecutive orders without missing shots!
-Manager Scoops: [do GameController.NextDia()]There's also a day cycle that lasts 30 seconds. At the start of each day, a shop will open up where you can buy some upgrades and finishing a day also gives you a bonus based off your accuracy. [wait=0.2]
+Manager Scoops: [do GameController.NextDia()]There's also a day cycle that lasts 45 seconds. At the start of each day, a shop will open up where you can buy some upgrades. [wait=0.2]
+Manager Scoops: [do GameController.NextDia()]After finishing a day, I'll go over your statistics. [wait=0.2]If your accuracy is terrible, you'll get a penalty, a deduction in points. May sound harsh, BUT...[wait=0.1] You can also get BONUS points if you're accurate with your shooting![wait=0.2]
+Manager Scoops: [do GameController.NextDia()]Your accuracy resets after each day btw, [wait=0.2]so you don't gotta worry about being in accuracy debt.
 Manager Scoops: [do GameController.NextDia()]That's all you need ta' really know about the job, nothing complex for now. [wait=0.2]\nPretty simple eh? Got any questions?
-
 - [do GameController.NextDia()]I think I get the gist of things now, thanks!
 	Manager Scoops: [do GameController.NextDia()]Alright nice! [wait=0.2]I'll be off now then... \nBest of luck Cruit! I know you'll do well! ♪^∇^*)
 - [do GameController.NextDia()]Could ya repeat everythin' again? 

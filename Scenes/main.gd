@@ -1,6 +1,8 @@
 extends Node2D
 const TutBalloon = preload("res://balloon.tscn")
 const DayAppear = preload("res://Scenes/day_control.tscn")
+const AccBonus = preload("res://AccuracyBonusText.tscn")
+const AccPenalty = preload("res://AccuracyPenaltyText.tscn")
 @export var dialogue_resource =  preload("res://BeginningDia.dialogue")
 @export var dialogue_start: String = "start"
 const PrestonShop = preload("res://ShopPreston.tscn")
@@ -38,6 +40,9 @@ func DiaEnded(_chuunibyo):
 	$Vector.process_mode = $Vector.PROCESS_MODE_INHERIT
 
 func _process(_delta: float) -> void:
+	var calc = (float(GameController.ScoopsToCustomersDay)/GameController.NumScoopsLaunchedDay)*100
+	GameController.AccuracyDay = "%.2f" % calc
+	#print(GameController.AccuracyDay)
 	$TimeLeft.text = str("%.0f" % $DayTimer.time_left)
 	pass
 	
@@ -58,10 +63,39 @@ func _on_pause_pressed() -> void:
 func _on_day_timer_timeout() -> void:
 	var DayNew = DayAppear.instantiate()
 	var PrestonNOW = PrestonShop.instantiate()
+	var BonusPos = AccBonus.instantiate()
+	var PenaltyPos = AccPenalty.instantiate()
 	add_child(DayNew)
 	DayNew.position = Vector2(0,0)
-	await get_tree().create_timer(3).timeout
+	#await get_tree().create_timer(1).timeout
+	#print()
+	#print("Start here")
+	#print(GameController.AccuracyDay)
+	#print(typeof(GameController.AccuracyDay))
+	#print(int(GameController.AccuracyDay))
+#	if int(GameController.AccuracyDay) is int:
+	if int(GameController.AccuracyDay) > 70:
+		print("GOT A BONUS +150")
+		GameController.Points += 150
+		add_child(BonusPos)
+		BonusPos.position = Vector2(429,295)
+		
+	elif int(GameController.AccuracyDay) < 30:
+		print("Nah mate -100")
+		GameController.Points -= 100
+		add_child(PenaltyPos)
+		PenaltyPos.position = Vector2(429,295)
+		
+	else:
+		print("no bonus +nuthin")
+#	else:
+#		print("U lost like ts much vro",GameController.NumScoopsLaunchedDay*10)
+	print("Accuracy reset")
+	GameController.AccuracyDay = 0
+	GameController.NumScoopsLaunchedDay = 0
+	GameController.ScoopsToCustomersDay = 0
 	GameController.Preston = true
+	await get_tree().create_timer(2.5).timeout
 	print("ok do preston")
 	add_child(PrestonNOW)
 	get_tree().paused = true

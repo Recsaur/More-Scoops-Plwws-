@@ -173,7 +173,7 @@ color = Color(0, 0, 0, 0.15686275)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(463, 353.99997)
-scale = Vector2(0.367, 0.062)
+scale = Vector2(0.062, 0.062)
 texture = ExtResource("1_lkycc")
 
 [node name="ColorRect2" type="Panel" parent="CanvasLayer/Sprite2D"]

@@ -45,6 +45,7 @@ func _on_body_entered(body: Node2D) -> void:
 			#$"..".queue_free()
 			Scoops += 1
 			GameController.ScoopsToCustomers += 1
+			GameController.ScoopsToCustomersDay += 1
 			$".".position.y -= 100
 			var IceCreamNew = ICECREAM.instantiate()
 			var parent = get_parent()

@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 
 func launch(force : Vector2) -> void:	
 	GameController.NumScoopsLaunched += 1
+	GameController.NumScoopsLaunchedDay += 1
 	print(GameController.Consecutive)
 	print("Scoops Launched: ",GameController.NumScoopsLaunched)
 	print("Scoops To Customers: ",GameController.ScoopsToCustomers)

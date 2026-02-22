@@ -27,7 +27,12 @@ var ICS_Rotation = 1
 var NumScoopsLaunched = 0 #Number of scoops launched
 var CustomersServed = 0 #Number of Customers served
 var ScoopsToCustomers = 0 #Number of scoops that got to custoemrs (dont show to players)
-var Accuracy = 0 #Accuracy gotten by dividing number of scoops launched by scoops that got to customers
+var Accuracy = 0 #Accuracy gotten by dividing number of sgot to customerscoops launched by scoops that 
+var BonusAcc = 150
+var PenaltyAcc = 100
+var AccuracyDay = 0
+var ScoopsToCustomersDay = 0
+var NumScoopsLaunchedDay = 0
 @onready var ticked = GameController.ConsecutiveOrder -1
 #Money earned
 #add in stats for different flavors
@@ -64,7 +69,7 @@ func Error():
 	NotEnough.finished.connect(NotEnough.queue_free)
 
 func _process(delta: float) -> void:
-	print(Points)
+	#print(Points)
 	while true:
 		await get_tree().create_timer(5.0).timeout
 		#print("0")

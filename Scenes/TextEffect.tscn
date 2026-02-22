@@ -24,8 +24,10 @@ default_font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_qyib2"]
 font = ExtResource("2_gel85")
-font_size = 636
+font_size = 150
 font_color = Color(1, 1, 0.65882355, 1)
+outline_size = 50
+outline_color = Color(0.1750724, 0.1750724, 0.10066928, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -34,14 +36,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2.45, 2.45)
 theme = SubResource("Theme_0p0nh")
 script = ExtResource("1_0p0nh")
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(0.64763075, 0.436848, 0.8799743, 1)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-scale = Vector2(0.12250974, 0.12250974)
+offset_right = 169.0
+offset_bottom = 151.0
+scale = Vector2(0.12649041, 0.12649041)
 text = "122"
 label_settings = SubResource("LabelSettings_qyib2")

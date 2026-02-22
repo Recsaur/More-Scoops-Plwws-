@@ -23,5 +23,5 @@ offset_left = -304.0
 offset_right = 3561.0
 offset_bottom = 294.0
 scale = Vector2(0.07779412, 0.07779412)
-text = "Version: 0.28.0 (Early Access Build)"
+text = "Version: 0.29.0 (Early Access Build)"
 label_settings = SubResource("LabelSettings_2c4hh")
