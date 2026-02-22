@@ -19,9 +19,10 @@ grow_horizontal = 0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = -304.0
-offset_right = 3561.0
+offset_left = -308.0
+offset_right = 3557.0
 offset_bottom = 294.0
 scale = Vector2(0.07779412, 0.07779412)
-text = "Version: 0.29.0 (Early Access Build)"
+text = "Version: 0.30.0 (Demo Build)"
 label_settings = SubResource("LabelSettings_2c4hh")
+horizontal_alignment = 2

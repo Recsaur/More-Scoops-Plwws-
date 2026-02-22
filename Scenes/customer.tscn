@@ -54,6 +54,7 @@ scale = Vector2(0.058650937, 0.058650937)
 texture = ExtResource("5_fhub2")
 
 [node name="Place" type="Label" parent="."]
+visible = false
 offset_left = -51.0
 offset_top = 55.0
 offset_right = -1.0

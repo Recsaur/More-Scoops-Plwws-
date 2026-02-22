@@ -43,7 +43,7 @@ func _process(_delta: float) -> void:
 	var calc = (float(GameController.ScoopsToCustomersDay)/GameController.NumScoopsLaunchedDay)*100
 	GameController.AccuracyDay = "%.2f" % calc
 	#print(GameController.AccuracyDay)
-	$TimeLeft.text = str("%.0f" % $DayTimer.time_left)
+	$TimeLeft.text = str("%.0f" % $DayTimer.time_left,"s")
 	pass
 	
 func _on_pause_pressed() -> void:

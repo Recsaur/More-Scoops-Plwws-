@@ -1,7 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://ul7omv7krm54"]
+[gd_scene load_steps=14 format=3 uid="uid://ul7omv7krm54"]
 
 [ext_resource type="Script" uid="uid://b0o6merkig2w2" path="res://debug.gd" id="1_axs6p"]
 [ext_resource type="Texture2D" uid="uid://cqsgaiejvkcro" path="res://images/ilcbicebtigfbisg.jpg" id="2_5k3ys"]
+[ext_resource type="FontFile" uid="uid://c8v22uaibndf2" path="res://misc/Born2bSportyV2.ttf" id="3_6fqrn"]
+[ext_resource type="LabelSettings" uid="uid://cvnaf6hfk42fk" path="res://misc/DebugFT.tres" id="4_h47sb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fqrn"]
+bg_color = Color(0.17641908, 0.17641911, 0.17641902, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_6fqrn"]
+Panel/styles/panel = SubResource("StyleBoxFlat_6fqrn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h47sb"]
+bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_fee55"]
+Panel/styles/panel = SubResource("StyleBoxFlat_h47sb")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5mfbk"]
+font = ExtResource("3_6fqrn")
+font_size = 140
+font_color = Color(1, 0.81960785, 0.60784316, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j2m1g"]
+font = ExtResource("3_6fqrn")
+font_size = 140
+font_color = Color(0.66245234, 0.66245234, 0.6624523, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_edppr"]
+font = ExtResource("3_6fqrn")
+font_size = 140
+font_color = Color(0.34276053, 0.7700659, 0.8736588, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_suyoq"]
+font = ExtResource("3_6fqrn")
+font_size = 140
+font_color = Color(0.6627451, 0.29803923, 0.4, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rkd8b"]
+font = ExtResource("3_6fqrn")
+font_size = 140
+font_color = Color(0.6627451, 0.29803923, 0.6039216, 1)
 
 [node name="DEBUG" type="Control"]
 process_mode = 3
@@ -13,7 +58,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_axs6p")
 
+[node name="ColorRect2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 2.0
+offset_right = 209.0
+offset_bottom = 116.0
+theme = SubResource("Theme_6fqrn")
+
+[node name="ColorRect" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 29.0
+offset_right = 225.0
+offset_bottom = 123.0
+theme = SubResource("Theme_fee55")
+
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 335.22412
 offset_bottom = 239.0
@@ -22,95 +83,133 @@ texture = ExtResource("2_5k3ys")
 
 [node name="SL" type="Label" parent="."]
 layout_mode = 0
-offset_left = 37.0
-offset_top = -2.0
-offset_right = 94.0
-offset_bottom = 21.0
+offset_left = 1.0
+offset_top = 31.0
+offset_right = 1160.0
+offset_bottom = 207.0
+scale = Vector2(0.163, 0.163)
 text = "Scoops Launched:"
+label_settings = SubResource("LabelSettings_5mfbk")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 179.0
-offset_top = -1.0
-offset_right = 219.0
-offset_bottom = 22.0
+offset_left = 156.0
+offset_top = 32.0
+offset_right = 217.0
+offset_bottom = 172.0
+scale = Vector2(0.163, 0.163)
 text = "0"
+label_settings = ExtResource("4_h47sb")
 
 [node name="STC" type="Label" parent="."]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 15.0
-offset_right = 94.0
-offset_bottom = 38.0
+offset_left = 1.0
+offset_top = 54.0
+offset_right = 1139.0
+offset_bottom = 194.0
+scale = Vector2(0.163, 0.163)
 text = "Scoops to Customers:"
+label_settings = SubResource("LabelSettings_j2m1g")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 207.0
-offset_top = 16.0
-offset_right = 247.0
-offset_bottom = 39.0
+offset_left = 190.0
+offset_top = 55.0
+offset_right = 251.0
+offset_bottom = 195.0
+scale = Vector2(0.163, 0.163)
 text = "0"
+label_settings = ExtResource("4_h47sb")
 
 [node name="CS" type="Label" parent="."]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 31.0
-offset_right = 94.0
-offset_bottom = 54.0
+offset_left = 1.0
+offset_top = 77.0
+offset_right = 989.0
+offset_bottom = 217.0
+scale = Vector2(0.163, 0.163)
 text = "Customers Served:"
+label_settings = SubResource("LabelSettings_edppr")
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 186.0
-offset_top = 31.0
+offset_left = 165.0
+offset_top = 78.0
 offset_right = 226.0
-offset_bottom = 54.0
+offset_bottom = 218.0
+scale = Vector2(0.163, 0.163)
 text = "0"
+label_settings = ExtResource("4_h47sb")
 
 [node name="ACC" type="Label" parent="."]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 47.0
-offset_right = 94.0
-offset_bottom = 70.0
+offset_left = 1.0
+offset_top = 97.0
+offset_right = 517.0
+offset_bottom = 237.0
+scale = Vector2(0.163, 0.163)
 text = "Accuracy:"
+label_settings = SubResource("LabelSettings_suyoq")
 
 [node name="Label4" type="Label" parent="."]
 layout_mode = 0
-offset_left = 115.0
-offset_top = 48.0
-offset_right = 155.0
-offset_bottom = 71.0
+offset_left = 88.0
+offset_top = 98.0
+offset_right = 324.0
+offset_bottom = 238.0
+scale = Vector2(0.163, 0.163)
 text = "100%"
+label_settings = ExtResource("4_h47sb")
 
 [node name="COMBO" type="Label" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 39.0
-offset_top = 65.0
-offset_right = 96.0
-offset_bottom = 88.0
+offset_left = 2.0
+offset_top = 119.0
+offset_right = 913.0
+offset_bottom = 259.0
+scale = Vector2(0.163, 0.163)
 text = "Combo Multiplier: "
+label_settings = SubResource("LabelSettings_rkd8b")
 
 [node name="Label5" type="Label" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 183.0
-offset_top = 66.0
-offset_right = 223.0
-offset_bottom = 89.0
+offset_left = 147.0
+offset_top = 121.0
+offset_right = 208.0
+offset_bottom = 261.0
+scale = Vector2(0.163, 0.163)
 text = "0"
+label_settings = ExtResource("4_h47sb")
 
 [node name="Label6" type="Label" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 43.0
-offset_top = 87.0
-offset_right = 83.0
-offset_bottom = 110.0
+offset_left = 12.0
+offset_top = 103.0
+offset_right = 1116.0
+offset_bottom = 243.0
+scale = Vector2(0.163, 0.163)
 text = "Time left to the day: "
+label_settings = ExtResource("4_h47sb")
 
 [node name="time" type="Label" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 206.0
-offset_top = 90.0
-offset_right = 246.0
-offset_bottom = 113.0
+offset_left = 175.0
+offset_top = 106.0
+offset_right = 215.0
+offset_bottom = 129.0
+scale = Vector2(0.163, 0.163)
+label_settings = ExtResource("4_h47sb")
+
+[node name="Label7" type="Label" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 4.0
+offset_right = 621.0
+offset_bottom = 144.0
+scale = Vector2(0.20066576, 0.20066576)
+text = "Total Stats"
+label_settings = ExtResource("4_h47sb")

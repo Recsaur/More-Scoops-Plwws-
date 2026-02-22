@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c5sptbsrinp51"]
+[gd_scene load_steps=27 format=3 uid="uid://c5sptbsrinp51"]
 
 [ext_resource type="Script" uid="uid://bq533e15ka0r0" path="res://Scenes/main.gd" id="1_6iyac"]
 [ext_resource type="Texture2D" uid="uid://bomn37m5g5j7y" path="res://images/MSP_bg.png" id="1_21xkr"]
@@ -19,8 +19,11 @@
 [ext_resource type="Script" uid="uid://c033gnkkechq6" path="res://Scenes/cursor.gd" id="12_6iyac"]
 [ext_resource type="PackedScene" uid="uid://casawssvu8oep" path="res://FadeTransition.tscn" id="12_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://cgkjupmhmatax" path="res://Scenes/PauseScreen.tscn" id="13_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://crmifksa8xd5g" path="res://Scenes/Others_ui.tscn" id="15_gt3je"]
 [ext_resource type="Texture2D" uid="uid://cyk0xsbup6eqo" path="res://images/MSP_Pause.png" id="15_k12tt"]
 [ext_resource type="AudioStream" uid="uid://cktpljvm14422" path="res://audio/freesound_community-cash-register-purchase-87313.mp3" id="18_b3802"]
+[ext_resource type="PackedScene" uid="uid://c2y0jenv3nbgi" path="res://Scenes/TimeUI.tscn" id="18_u50mg"]
+[ext_resource type="LabelSettings" uid="uid://cvnaf6hfk42fk" path="res://misc/DebugFT.tres" id="19_cbgmd"]
 [ext_resource type="PackedScene" uid="uid://blxt4ut06kfmt" path="res://Scenes/VersionCount.tscn" id="19_fevyy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_344ge"]
@@ -73,7 +76,7 @@ position = Vector2(443, 572)
 position = Vector2(1420, 417)
 
 [node name="ConsecutiveOrder" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 one_shot = true
 
 [node name="CustomerSpawn" type="Timer" parent="."]
@@ -119,6 +122,12 @@ stream = ExtResource("8_jkdf5")
 position = Vector2(641, 362)
 script = ExtResource("12_6iyac")
 
+[node name="Control" parent="." instance=ExtResource("15_gt3je")]
+offset_left = 388.0
+offset_top = 61.0
+offset_right = 388.0
+offset_bottom = 61.0
+
 [node name="PointsUI" parent="." instance=ExtResource("5_kry3j")]
 offset_left = 531.0
 offset_top = 14.0
@@ -126,10 +135,27 @@ offset_right = 531.0
 offset_bottom = 14.0
 
 [node name="DEBUG" parent="." instance=ExtResource("11_d1ilt")]
-offset_left = 536.0
-offset_top = 81.0
-offset_right = 536.0
-offset_bottom = 81.0
+visible = false
+offset_left = 531.0
+offset_top = 62.0
+offset_right = 531.0
+offset_bottom = 62.0
+
+[node name="Control2" parent="." instance=ExtResource("18_u50mg")]
+offset_left = 104.999985
+offset_top = 48.0
+offset_right = 104.999985
+offset_bottom = 48.0
+scale = Vector2(0.7266033, 0.7266033)
+
+[node name="TimeLeft" type="Label" parent="."]
+offset_left = 261.0
+offset_top = 56.999996
+offset_right = 383.0
+offset_bottom = 197.0
+scale = Vector2(0.16479272, 0.16479272)
+text = "67"
+label_settings = ExtResource("19_cbgmd")
 
 [node name="Vector" parent="." instance=ExtResource("3_8gbba")]
 process_mode = 4
@@ -168,12 +194,6 @@ stream = ExtResource("18_b3802")
 layer = 101
 
 [node name="Version" parent="BuildVer" instance=ExtResource("19_fevyy")]
-
-[node name="TimeLeft" type="Label" parent="."]
-offset_left = 340.0
-offset_top = 12.0
-offset_right = 380.0
-offset_bottom = 35.0
 
 [connection signal="timeout" from="CustomerSpawn" to="Vector" method="_on_customer_spawn_timeout"]
 [connection signal="finished" from="ClavierMusicSoftJazzPianoMusic233868" to="." method="_on_clavier_music_soft_jazz_piano_music_233868_finished"]
