@@ -96,7 +96,7 @@ region = Rect2(3.86, 0, 0, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4nd2f"]
 atlas = ExtResource("2_jj3vs")
-region = Rect2(500, 0, 0, 0)
+region = Rect2(200, 0, 0, 0)
 
 [sub_resource type="Theme" id="Theme_4nd2f"]
 
@@ -222,9 +222,9 @@ texture = SubResource("AtlasTexture_wxbh2")
 
 [node name="box2" type="TextureRect" parent="Balloon"]
 layout_mode = 0
-offset_left = 411.0
+offset_left = 408.0
 offset_top = 196.00002
-offset_right = 5372.0
+offset_right = 5369.0
 offset_bottom = 3692.0
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_4nd2f")

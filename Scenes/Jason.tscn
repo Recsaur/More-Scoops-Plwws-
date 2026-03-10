@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://mti5dsjwfno" path="res://images/MSP_OrderUI.png" id="8_quqva"]
 [ext_resource type="LabelSettings" uid="uid://cg5u3jnwp03he" path="res://misc/customer.tres" id="9_fplxe"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ta2"]
-size = Vector2(90, 149.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iv2bo"]
+radius = 37.0
+height = 174.0
 
 [node name="Jason" type="CharacterBody2D"]
 collision_layer = 3
@@ -18,22 +19,22 @@ collision_mask = 4
 script = ExtResource("1_ai15l")
 
 [node name="ColorRect" type="Sprite2D" parent="."]
-position = Vector2(-4.9999986, 160)
+position = Vector2(-7.0962806, 148.99452)
 rotation = 0.056979116
-scale = Vector2(0.06401647, 0.025851263)
+scale = Vector2(0.091842465, 0.037126046)
 texture = ExtResource("2_n3qq4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-10, 50.75)
-shape = SubResource("RectangleShape2D_r8ta2")
+position = Vector2(-2, 71)
+shape = SubResource("CapsuleShape2D_iv2bo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-18.000004, 25)
-scale = Vector2(0.08892306, 0.088923045)
+position = Vector2(-13.999998, 16.999998)
+scale = Vector2(0.2080872, 0.20808716)
 texture = ExtResource("4_sdct1")
 
 [node name="WaffleCone" parent="." instance=ExtResource("4_xqxpc")]
-position = Vector2(-97.00001, 9.999998)
+position = Vector2(-90.99999, 1.999999)
 scale = Vector2(0.43597752, 0.43597752)
 
 [node name="Timer" type="Timer" parent="."]
@@ -46,19 +47,19 @@ stream = ExtResource("5_8yxs0")
 volume_db = -10.266
 
 [node name="MspTimeUi" type="Sprite2D" parent="."]
-position = Vector2(101, -90)
-scale = Vector2(0.058650937, 0.058650937)
+position = Vector2(119, -84.00001)
+scale = Vector2(0.15603487, 0.15603487)
 texture = ExtResource("7_m6uk4")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(-0.9999962, -175.00002)
-scale = Vector2(0.04976872, 0.04976872)
+position = Vector2(12.000008, -179)
+scale = Vector2(0.14893149, 0.14893149)
 texture = ExtResource("8_quqva")
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 30.0
+offset_left = 44.0
 offset_top = -162.00002
-offset_right = 826.0
+offset_right = 840.0
 offset_bottom = 249.99998
 scale = Vector2(0.07339088, 0.07339088)
 text = "67.67"

@@ -10,8 +10,9 @@
 [ext_resource type="AudioStream" uid="uid://d31fojet4vskq" path="res://audio/gone.wav" id="7_2o0mk"]
 [ext_resource type="LabelSettings" uid="uid://cg5u3jnwp03he" path="res://misc/customer.tres" id="7_olakf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ta2"]
-size = Vector2(110, 110)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_olakf"]
+radius = 48.0
+height = 302.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_fhub2"]
 font = ExtResource("6_fhub2")
@@ -24,34 +25,25 @@ collision_mask = 4
 script = ExtResource("1_r8ta2")
 
 [node name="ColorRect" type="Sprite2D" parent="."]
-position = Vector2(-19.000002, 163.00002)
+position = Vector2(-12.999994, 158.00002)
 rotation = 0.05697912
-scale = Vector2(0.056135617, 0.0226688)
+scale = Vector2(0.104152866, 0.04205922)
 texture = ExtResource("2_q72uo")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-0.9999962, -220)
-scale = Vector2(0.04976872, 0.04976872)
-texture = ExtResource("2_vkxjs")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_r8ta2")
+position = Vector2(-5, 8)
+shape = SubResource("CapsuleShape2D_olakf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3.8146968e-06, 0)
-scale = Vector2(0.08268382, 0.08268381)
+position = Vector2(3.000001, -6.000002)
+scale = Vector2(0.20056415, 0.20056413)
 texture = ExtResource("3_qf3me")
 
 [node name="WaffleCone" parent="." instance=ExtResource("3_f7asb")]
-position = Vector2(-94.99999, -50.999996)
+position = Vector2(-91.99999, -54.999992)
 scale = Vector2(0.42838103, 0.42838103)
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-
-[node name="MspTimeUi" type="Sprite2D" parent="."]
-position = Vector2(101, -136)
-scale = Vector2(0.058650937, 0.058650937)
-texture = ExtResource("5_fhub2")
 
 [node name="Place" type="Label" parent="."]
 visible = false
@@ -61,6 +53,16 @@ offset_right = -1.0
 offset_bottom = 78.0
 text = "Order:"
 metadata/_edit_use_anchors_ = true
+
+[node name="MspTimeUi" type="Sprite2D" parent="."]
+position = Vector2(128, -127)
+scale = Vector2(0.16123238, 0.16123238)
+texture = ExtResource("5_fhub2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(6, -226)
+scale = Vector2(0.14395498, 0.14395498)
+texture = ExtResource("2_vkxjs")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -101.0
@@ -74,10 +76,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 38.0
+offset_left = 59.0
 offset_top = -207.0
-offset_right = 78.0
-offset_bottom = -184.0
+offset_right = 362.0
+offset_bottom = 25.0
 scale = Vector2(0.128563, 0.128563)
 text = "1.67"
 label_settings = SubResource("LabelSettings_fhub2")

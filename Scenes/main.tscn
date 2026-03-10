@@ -52,18 +52,19 @@ script = ExtResource("6_6bp64")
 position = Vector2(128, 456)
 
 [node name="ColorRect2" type="Sprite2D" parent="."]
-position = Vector2(156, 613)
+position = Vector2(157, 625)
 rotation = 0.056979116
-scale = Vector2(0.06412183, 0.025893807)
+scale = Vector2(0.116518736, 0.047052834)
 texture = ExtResource("4_ee4r6")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(163.875, 437.93726)
-scale = Vector2(0.08745709, 0.087457076)
+scale = Vector2(0.22567737, 0.22567736)
 texture = ExtResource("4_pdsj5")
 
 [node name="Scoop" parent="." instance=ExtResource("4_jjvhh")]
 position = Vector2(162.875, 432.93726)
+scale = Vector2(2.5804355, 2.5804355)
 
 [node name="IceCreamWindow" parent="." instance=ExtResource("3_jjvhh")]
 position = Vector2(365, 544)

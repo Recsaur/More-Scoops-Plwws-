@@ -173,22 +173,24 @@ color = Color(0, 0, 0, 0.15686275)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(463, 353.99997)
-scale = Vector2(0.062, 0.062)
+scale = Vector2(0.22328739, 0.22328739)
 texture = ExtResource("1_lkycc")
 
 [node name="ColorRect2" type="Panel" parent="CanvasLayer/Sprite2D"]
-offset_left = -1372.4453
-offset_top = -3423.0508
-offset_right = 1324.0142
-offset_bottom = -2987.0967
+offset_left = -381.08557
+offset_top = -950.4753
+offset_right = 2315.374
+offset_bottom = -514.5212
+scale = Vector2(0.2835626, 0.2835626)
 theme = SubResource("Theme_lwoum")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="CanvasLayer/Sprite2D"]
-offset_left = -2195.9197
-offset_top = 2551.1426
-offset_right = 2324.0803
-offset_bottom = 3198.1426
+offset_left = -609.7389
+offset_top = 725.687
+offset_right = 3910.2612
+offset_bottom = 1372.687
+scale = Vector2(0.2835626, 0.2835626)
 text = "-Customer loss penalty 
 increase 100 -> 150"
 label_settings = SubResource("LabelSettings_x534q")
@@ -196,10 +198,11 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="CanvasLayer/Sprite2D"]
-offset_left = -1582.3536
-offset_top = 2002.1627
-offset_right = 1695.3793
-offset_bottom = 2649.1626
+offset_left = -439.37048
+offset_top = 573.25244
+offset_right = 2838.3623
+offset_bottom = 1220.2523
+scale = Vector2(0.2835626, 0.2835626)
 text = "+Customer wait time
 increase +5 seconds"
 label_settings = SubResource("LabelSettings_k7wgu")
@@ -207,19 +210,21 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer/Sprite2D"]
-offset_left = -2115.187
-offset_top = -468.24707
-offset_right = 1054.813
-offset_bottom = 143.75293
+offset_left = -587.3219
+offset_top = -130.0177
+offset_right = 2582.6782
+offset_bottom = 481.9823
+scale = Vector2(0.2835626, 0.2835626)
 text = "Active Server"
 label_settings = SubResource("LabelSettings_rexyw")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="CanvasLayer/Sprite2D"]
-offset_left = -1969.869
-offset_top = 129.1721
-offset_right = 14794.131
-offset_bottom = 2586.172
+offset_left = -546.97156
+offset_top = 44.785454
+offset_right = 16217.028
+offset_bottom = 2501.7854
+scale = Vector2(0.2835626, 0.2835626)
 text = "Please don't make them wait any 
 longer -or else they'd be more 
 irritated after tolerating your 
@@ -228,30 +233,33 @@ customer service skills!"
 label_settings = SubResource("LabelSettings_wso74")
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Sprite2D"]
-offset_left = -2050.601
-offset_top = 1856.8442
-offset_right = 2050.6006
-offset_bottom = 1896.8442
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Sprite2D"]
+offset_left = -569.3884
+offset_top = 532.94556
+offset_right = 3531.8132
+offset_bottom = 572.94556
+scale = Vector2(0.28356254, 0.28356254)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label5" type="Label" parent="CanvasLayer/Sprite2D"]
-offset_left = -1630.793
-offset_top = -3423.051
-offset_right = 1539.207
-offset_bottom = -2811.051
+offset_left = -452.82068
+offset_top = -950.47534
+offset_right = 2717.1792
+offset_bottom = -338.47534
+scale = Vector2(0.2835626, 0.2835626)
 text = "500 Points"
 label_settings = SubResource("LabelSettings_4qigb")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="CanvasLayer/Sprite2D"]
+[node name="Button2" type="Button" parent="CanvasLayer/Sprite2D"]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -2661.2893
-offset_top = -3838.7097
-offset_right = 2725.8083
-offset_bottom = 3692.7668
+offset_left = -738.95764
+offset_top = -1065.8909
+offset_right = 4648.14
+offset_bottom = 6465.586
+scale = Vector2(0.2835626, 0.2835626)
 mouse_default_cursor_shape = 2
 flat = true
 script = SubResource("GDScript_pc5gd")
@@ -260,39 +268,43 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(824.99994, 355)
-scale = Vector2(0.062, 0.062)
+scale = Vector2(0.223, 0.223)
 texture = ExtResource("3_pc5gd")
 
 [node name="ColorRect2" type="Panel" parent="CanvasLayer/Sprite2D2"]
-offset_left = -1372.4453
-offset_top = -3423.0508
-offset_right = 1324.0142
-offset_bottom = -2987.0967
+offset_left = -381.57666
+offset_top = -951.70013
+offset_right = 2314.8828
+offset_bottom = -515.74603
+scale = Vector2(0.27582714, 0.27582714)
 theme = SubResource("Theme_lwoum")
 
 [node name="Label3" type="Label" parent="CanvasLayer/Sprite2D2"]
-offset_left = -1582.3536
-offset_top = 2177.4194
-offset_right = 1695.3793
-offset_bottom = 2824.4192
+offset_left = -439.93677
+offset_top = 650.2241
+offset_right = 2837.7961
+offset_bottom = 1297.2239
+scale = Vector2(0.27582714, 0.27582714)
 text = "+Customer orders payment
 increase 50 ->100"
 label_settings = SubResource("LabelSettings_kydre")
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/Sprite2D2"]
-offset_left = -2115.187
-offset_top = -468.24707
-offset_right = 1054.813
-offset_bottom = 143.75293
+offset_left = -588.07886
+offset_top = -130.18518
+offset_right = 3611.9211
+offset_bottom = 481.81482
+scale = Vector2(0.27582714, 0.27582714)
 text = "Better Ingredients"
 label_settings = SubResource("LabelSettings_rexyw")
 
 [node name="Label2" type="Label" parent="CanvasLayer/Sprite2D2"]
-offset_left = -1969.869
-offset_top = 129.1721
-offset_right = 14794.131
-offset_bottom = 2586.172
+offset_left = -547.67676
+offset_top = 49.327377
+offset_right = 16216.323
+offset_bottom = 2506.3274
+scale = Vector2(0.27582714, 0.27582714)
 text = "For the sake of the customers and 
 their taste buds! (and maybe for 
 better profits...) Found a supplier that 
@@ -301,28 +313,31 @@ ingredients coming all the way from
 the corner store around the street."
 label_settings = SubResource("LabelSettings_81f03")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Sprite2D2"]
-offset_left = -2050.601
-offset_top = 1856.8442
-offset_right = 2050.6006
-offset_bottom = 1896.8442
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Sprite2D2"]
+offset_left = -570.1223
+offset_top = 551.56946
+offset_right = 3531.0793
+offset_bottom = 591.56946
+scale = Vector2(0.27582714, 0.27582714)
 
 [node name="Label5" type="Label" parent="CanvasLayer/Sprite2D2"]
-offset_left = -1630.793
-offset_top = -3423.051
-offset_right = 1539.207
-offset_bottom = -2811.051
+offset_left = -453.40454
+offset_top = -951.70026
+offset_right = 2716.5955
+offset_bottom = -339.70026
+scale = Vector2(0.27582714, 0.27582714)
 text = "1250 Points"
 label_settings = SubResource("LabelSettings_4qigb")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/Sprite2D2"]
+[node name="Button2" type="Button" parent="CanvasLayer/Sprite2D2"]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -2661.2893
-offset_top = -3838.7097
-offset_right = 2725.8083
-offset_bottom = 3692.7668
+offset_left = -739.9099
+offset_top = -1067.2645
+offset_right = 4647.1875
+offset_bottom = 6464.212
+scale = Vector2(0.27582714, 0.27582714)
 mouse_default_cursor_shape = 2
 flat = true
 script = SubResource("GDScript_pc5gd")
@@ -356,10 +371,10 @@ stream = ExtResource("6_lwoum")
 volume_db = -15.0
 autoplay = true
 
-[connection signal="mouse_entered" from="CanvasLayer/Sprite2D/Button" to="CanvasLayer/Sprite2D/Button" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Sprite2D/Button" to="CanvasLayer/Sprite2D/Button" method="_on_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/Sprite2D/Button" to="CanvasLayer/Sprite2D/Button" method="_on_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/Sprite2D2/Button" to="CanvasLayer/Sprite2D2/Button" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Sprite2D2/Button" to="CanvasLayer/Sprite2D2/Button" method="_on_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/Sprite2D2/Button" to="CanvasLayer/Sprite2D/Button" method="_on_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Sprite2D/Button2" to="CanvasLayer/Sprite2D/Button2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Sprite2D/Button2" to="CanvasLayer/Sprite2D/Button2" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Sprite2D/Button2" to="CanvasLayer/Sprite2D/Button2" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Sprite2D2/Button2" to="CanvasLayer/Sprite2D2/Button2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Sprite2D2/Button2" to="CanvasLayer/Sprite2D2/Button2" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Sprite2D2/Button2" to="CanvasLayer/Sprite2D/Button2" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
