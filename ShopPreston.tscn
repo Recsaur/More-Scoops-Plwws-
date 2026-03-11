@@ -102,13 +102,13 @@ func _on_mouse_entered() -> void:
 	var tween = create_tween()
 	get_parent().modulate = Color(1.1, 1.1, 1.1, 1.0)
 	$\"../../../AudioStreamPlayer2D\".play()
-	tween.tween_property(get_parent(),\"scale\",Vector2(0.067,0.067),0.5).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(get_parent(),\"scale\",Vector2(0.245,0.245),0.5).set_trans(Tween.TRANS_BACK)
 
 
 func _on_mouse_exited() -> void:
 	var tween = create_tween()
 	get_parent().modulate = Color(1, 1, 1, 1.0)
-	tween.tween_property(get_parent(),\"scale\",Vector2(0.062,0.062),0.5).set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_property(get_parent(),\"scale\",Vector2(0.223,0.223),0.5).set_trans(Tween.TRANS_ELASTIC)
 
 
 func _on_pressed() -> void:
@@ -354,13 +354,13 @@ text = "Leave Shop"
 [node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer"]
 visible = false
 position = Vector2(462, 354)
-scale = Vector2(0.062, 0.062)
+scale = Vector2(0.223, 0.223)
 texture = ExtResource("4_81f03")
 
 [node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
 visible = false
 position = Vector2(825, 354)
-scale = Vector2(0.062, 0.062)
+scale = Vector2(0.223, 0.223)
 texture = ExtResource("4_81f03")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

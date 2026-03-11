@@ -65,9 +65,9 @@ scale = Vector2(0.14395498, 0.14395498)
 texture = ExtResource("2_vkxjs")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -101.0
+offset_left = -107.00001
 offset_top = -214.00002
-offset_right = 368.0
+offset_right = 362.0
 offset_bottom = 347.0
 scale = Vector2(0.12547083, 0.12547083)
 text = "67"
